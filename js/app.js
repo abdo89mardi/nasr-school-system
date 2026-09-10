@@ -34,7 +34,10 @@
     teacherModal: false, // "Add teacher" modal
     notifOpen: false,    // notification popover
     drawerOpen: false,   // mobile navigation drawer (≤900px only)
-    profile: null        // signed-in account: { id, full_name, role, campus }
+    profile: null,       // signed-in account: { id, full_name, role, campus }
+    authState: 'pending',// pending | in | out — see the route guard
+    wanted: 'visitor',   // the screen that was asked for, before the guard ran
+    wantedSection: null  // and the section, held across the checking screen
   };
 
   /* Section keys per dashboard, in sidebar order. Routing in the real app can
@@ -128,6 +131,7 @@
     return {
       // screens
       isVisitor: s === 'visitor', isLogin: s === 'login',
+      isChecking: s === 'checking',
       isAdmin: s === 'admin', isStaff: s === 'staff', isParent: s === 'parent',
       // admin sections
       aOverview: sec === 'overview', aStudents: sec === 'students', aStaffSec: sec === 'staff',
@@ -180,9 +184,61 @@
 
   /* ---- Actions ----------------------------------------------------------- */
 
+  /* ---- Route guard --------------------------------------------------------
+
+   * The three dashboards require a real Supabase session. The public page and
+   * the login screen never do.
+   *
+   * The difficulty is timing: the session is only known once supabase-js has
+   * loaded and getSession() has resolved, which is well after the first paint.
+   * A guard that assumes "signed out" until then bounces a signed-in person to
+   * the login screen and back on every reload; one that assumes "signed in"
+   * shows the dashboard shell to a stranger for a few hundred milliseconds.
+   *
+   * So authentication has three states, not two, and `pending` renders a
+   * neutral checking screen. Nobody sees a dashboard before we know.
+   *
+   * `state.wanted` keeps the screen that was actually asked for, so once the
+   * answer arrives the person continues where they were headed.
+   * -------------------------------------------------------------------- */
+
+  /* The single place that decides which screen may be shown. */
+  function allowedScreen(requested) {
+    if (!isDashboard(requested)) return requested;   // visitor + login: always open
+    if (state.authState === 'pending') return 'checking';
+    if (state.authState !== 'in') return 'login';
+
+    // Signed in: the dashboard must match the role the server gave us, so a
+    // teacher typing #/admin lands on their own dashboard instead.
+    var role = state.profile && state.profile.role;
+    if (!role) return 'login';                       // session without a profile row
+    return role === requested ? requested : role;
+  }
+
+  /* Re-applies the guard to whatever was last requested. Called when the auth
+   * state changes, which is the moment a held-back route can be released. */
+  function applyGuard() {
+    var next = allowedScreen(state.wanted || state.screen);
+    if (next === state.screen) return false;
+    state.screen = next;
+    if (!isDashboard(next)) {
+      state.section = 'overview';
+      return true;
+    }
+    // Releasing a held dashboard restores the section that was deep-linked, so
+    // a reload on #/admin/finance comes back to finance and not to the top.
+    var valid = SECTIONS[next];
+    state.section = (state.wantedSection && valid.indexOf(state.wantedSection) !== -1)
+      ? state.wantedSection
+      : 'overview';
+    state.wantedSection = null;
+    return true;
+  }
+
   function goScreen(next) {
     return function () {
-      state.screen = next;
+      state.wanted = next;
+      state.screen = allowedScreen(next);
       state.section = 'overview';
       state.modal = false;
       state.teacherModal = false;
@@ -229,6 +285,8 @@
      * next visitor cannot resume the previous one from the stored token. */
     logout: function () {
       state.profile = null;
+      state.authState = 'out';
+      state.wanted = 'login';
       if (window.NasrAuth) window.NasrAuth.signOut();
       goScreen('login')();
     },
@@ -268,8 +326,14 @@
           return;
         }
         applyProfile(res.data.profile);
+        state.authState = res.data.profile ? 'in' : 'out';
         if (passEl) passEl.value = '';
-        goScreen(state.role)();
+        if (state.authState !== 'in') {
+          render();
+          showLoginError(dict().authNoProfile);
+          return;
+        }
+        goScreen(state.profile.role)();
         loadScreenData();
       });
     },
@@ -577,8 +641,10 @@
   }
 
   function applyPath(route) {
-    state.screen = route.screen;
-    state.section = route.section;
+    state.wanted = route.screen;
+    state.wantedSection = route.section;
+    state.screen = allowedScreen(route.screen);
+    state.section = isDashboard(state.screen) ? route.section : 'overview';
     state.modal = false;
     state.teacherModal = false;
     state.notifOpen = false;
@@ -758,15 +824,21 @@
 
     var route = parsePath(location.hash);
     if (route && location.hash) {
-      state.screen = route.screen;
-      state.section = route.section;
+      state.wanted = route.screen;
+      state.wantedSection = route.section;
     } else {
-      if (saved.screen) state.screen = saved.screen;
-      var valid = SECTIONS[state.screen];
-      state.section = (valid && saved.section && valid.indexOf(saved.section) !== -1)
+      if (saved.screen) state.wanted = saved.screen;
+      var valid = SECTIONS[state.wanted];
+      state.wantedSection = (valid && saved.section && valid.indexOf(saved.section) !== -1)
         ? saved.section
         : 'overview';
     }
+    state.section = state.wantedSection || 'overview';
+
+    // Nothing is shown until the guard has had its say. On a dashboard URL this
+    // means the checking screen, never the dashboard itself.
+    state.screen = allowedScreen(state.wanted);
+    if (!isDashboard(state.screen)) state.section = 'overview';
 
     // The opening page replaces the entry the document loaded with, so the
     // first back press leaves the app instead of stepping through a duplicate.
@@ -806,23 +878,45 @@
    * the dashboards fill with real rows. Until then — and if the schema has not
    * been applied at all — the screens keep the design's own content, so the app
    * is never broken by a database that is not ready. */
+  /* Turns `pending` into a real answer and releases whatever route was held.
+   * Called exactly once, from whichever of the two paths below wins. */
+  var settled = false;
+  function settleAuth(profile) {
+    if (settled) return;
+    settled = true;
+    applyProfile(profile);
+    state.authState = profile && profile.role ? 'in' : 'out';
+    applyGuard();
+    render();
+    syncUrl();
+    loadScreenData();
+  }
+
   window.addEventListener('nasr:ready', function (e) {
+    // Without the library there is no way to verify a session, and an
+    // unverifiable visitor is treated as signed out. Guessing the other way
+    // would hand the dashboards to anyone whose CDN request happened to fail.
+    if (!e.detail.lib) {
+      settleAuth(null);
+      showLoginError(dict().authNoLib);
+      return;
+    }
     if (!e.detail.db) {
-      console.info('[nasr] يعمل على محتوى التصميم — لم تُطبَّق الجداول بعد.');
+      console.info('[nasr] الجداول غير مطبَّقة — لا يمكن قراءة الأدوار.');
+      settleAuth(null);
       return;
     }
     window.NasrAuth.profile().then(function (res) {
-      if (res.data) {
-        applyProfile(res.data);
-        // A signed-in reload that landed on the public page goes to the
-        // dashboard the account actually belongs to.
-        if (!isDashboard(state.screen)) {
-          goScreen(res.data.role)();
-        } else {
-          render();
-        }
-      }
-      loadScreenData();
+      settleAuth(res.data);
     });
   });
+
+  /* If the data layer never reports at all — a blocked CDN, a script that 404s —
+   * the checking screen must not become a dead end. */
+  setTimeout(function () {
+    if (!settled) {
+      console.warn('[nasr] لم تصل حالة الجلسة في الوقت المتوقّع — تُعامَل كغير مسجّل.');
+      settleAuth(null);
+    }
+  }, 8000);
 })();

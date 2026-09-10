@@ -16,6 +16,17 @@
 <body>
   <div id="app" style="min-height:100vh;background:#EEF1F3;color:#10222A">
 
+  <!-- Shown only while the session is being verified. A dashboard URL renders
+       this, never the dashboard, so the shell is not exposed before we know
+       who is asking. It is replaced the moment auth resolves. -->
+  <div class="when" data-if="isChecking">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+      <div style="width:34px;height:34px;border-radius:50%;border:3px solid #E4E9EC;border-top-color:#0E7C86;animation:spin .8s linear infinite"></div>
+      <div style="font:500 13.5px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="checkingSession"></span></div>
+    </div>
+  </div>
+  </div>
   <div class="when" data-if="isVisitor">
   <div style="background:#fff">
     <div class="drawer-scrim" data-open="false" data-action="closeDrawer"></div>
