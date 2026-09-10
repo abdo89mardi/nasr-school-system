@@ -1468,13 +1468,15 @@
      data.js    — window.NasrI18n, which store.js validates against
      store.js   — session persistence
      app.js     — the controller; renders immediately from the design
-     supabase.js— an ES module, so it runs last by definition. It publishes
-                  NasrApi/NasrAuth and then fires "nasr:ready", which app.js
-                  listens for. The screens are usable before it arrives. -->
+     supabase.js— publishes NasrApi/NasrAuth, then fires "nasr:ready" for
+                  app.js. All classic scripts, no modules: a browser refuses
+                  <script type="module"> over file://, and this page is opened
+                  straight from disk as often as it is served. -->
 <script src="js/config.js"></script>
 <script src="js/data.js"></script>
 <script src="js/store.js"></script>
 <script src="js/app.js"></script>
-<script type="module" src="js/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.10/dist/umd/supabase.js"></script>
+<script src="js/supabase.js"></script>
 </body>
 </html>

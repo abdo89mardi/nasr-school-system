@@ -250,7 +250,9 @@
         return;
       }
       if (!window.NasrAuth) {
-        showLoginError(dict().authOffline);
+        // Not a connection problem — the data layer itself never loaded. Saying
+        // "check your connection" here sends people to debug the wrong thing.
+        showLoginError(dict().authNoLib);
         return;
       }
 

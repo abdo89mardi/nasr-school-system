@@ -5,6 +5,7 @@
  */
 
 const AR = {
+  authNoLib: 'لم تُحمَّل مكتبة الاتصال بقاعدة البيانات. تأكّد من اتصالك بالإنترنت ثم أعد تحميل الصفحة.',
   authBadCreds: 'البريد الإلكتروني أو كلمة المرور غير صحيحة.', authUnconfirmed: 'لم يُفعّل هذا البريد بعد — افتح رسالة التأكيد في بريدك.', authRateLimit: 'محاولات كثيرة متتالية. انتظر قليلاً ثم أعد المحاولة.', authOffline: 'تعذّر الوصول إلى الخادم. تحقّق من اتصالك.', authFailed: 'تعذّر تسجيل الدخول.', authMissing: 'أدخل البريد الإلكتروني وكلمة المرور.', saving: 'جارٍ الحفظ…', saveFailed: 'تعذّر الحفظ.', dbMissing: 'قاعدة البيانات غير مهيّأة بعد.',
   crumbAria: 'مسار التنقل',
   mock: 'نموذج الشاشات', navVisitor: 'الصفحة العامة', navLogin: 'تسجيل الدخول', navAdmin: 'لوحة المدير', navStaff: 'لوحة المعلم', navParent: 'لوحة وليّ الأمر',
@@ -126,6 +127,7 @@ const AR = {
 };
 
 const EN = {
+  authNoLib: 'The database library did not load. Check your internet connection and reload the page.',
   authBadCreds: 'That email or password is not correct.', authUnconfirmed: 'This email is not confirmed yet — open the confirmation message in your inbox.', authRateLimit: 'Too many attempts in a row. Wait a moment and try again.', authOffline: 'Could not reach the server. Check your connection.', authFailed: 'Sign-in failed.', authMissing: 'Enter your email and password.', saving: 'Saving…', saveFailed: 'Could not save.', dbMissing: 'The database is not set up yet.',
   crumbAria: 'Breadcrumb',
   mock: 'Screens', navVisitor: 'Public Page', navLogin: 'Login', navAdmin: 'Admin', navStaff: 'Staff', navParent: 'Parent',

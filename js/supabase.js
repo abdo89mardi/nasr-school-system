@@ -1,21 +1,35 @@
 /* Nasr School Management System — Supabase client, data access and auth
  *
- * The project has no build step, so this is an ES module loaded straight from
- * a CDN. It publishes three globals for the classic scripts to use:
+ * A CLASSIC script, deliberately not an ES module. The project is opened
+ * straight from disk as often as it is served over http, and a browser
+ * refuses <script type="module"> over file:// — the whole data layer would
+ * silently never load, and every sign-in would fail with a misleading
+ * "check your connection". supabase-js ships a UMD build for exactly this,
+ * loaded by index.html just before this file and exposing window.supabase.
+ *
+ * It publishes three globals for the rest of the app:
  *
  *   window.NasrDB    — the raw supabase-js client (escape hatch)
  *   window.NasrApi   — every read and write the screens need
  *   window.NasrAuth  — sign in, sign out, and who is signed in
  *
- * Because a module executes after the classic scripts, nothing here may be
- * assumed to exist at app.js's first render. app.js waits for the
- * 'nasr:ready' event on window instead.
- *
  * Every function returns { data, error } — never throws, never alerts. The
  * screens decide what to show; this layer only reports.
  */
 
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.10/+esm';
+(function () {
+  'use strict';
+
+  /* The CDN script may be blocked or offline. Say so plainly rather than
+   * letting every later call fail with a confusing message. */
+  if (!window.supabase || !window.supabase.createClient) {
+    window.NasrLibMissing = true;
+    console.error('[nasr] لم تُحمَّل مكتبة supabase-js — تحقّق من الاتصال بالإنترنت.');
+    window.dispatchEvent(new CustomEvent('nasr:ready', { detail: { db: false, lib: false } }));
+    return;
+  }
+
+  var createClient = window.supabase.createClient;
 
 const cfg = window.NasrConfig || {};
 
@@ -225,14 +239,15 @@ const api = {
   }
 };
 
-window.NasrDB = db;
-window.NasrApi = api;
-window.NasrAuth = auth;
+  window.NasrDB = db;
+  window.NasrApi = api;
+  window.NasrAuth = auth;
 
-api.ready().then(function (ok) {
-  window.NasrDbReady = ok;
-  if (!ok) {
-    console.warn('[nasr] الجداول غير موجودة بعد — شغّل supabase/schema.sql في SQL Editor.');
-  }
-  window.dispatchEvent(new CustomEvent('nasr:ready', { detail: { db: ok } }));
-});
+  api.ready().then(function (ok) {
+    window.NasrDbReady = ok;
+    if (!ok) {
+      console.warn('[nasr] الجداول غير موجودة بعد — شغّل supabase/schema.sql في SQL Editor.');
+    }
+    window.dispatchEvent(new CustomEvent('nasr:ready', { detail: { db: ok, lib: true } }));
+  });
+})();
