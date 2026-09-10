@@ -1,0 +1,421 @@
+/* Nasr School Management System — stylesheet
+ * Assembled from the approved design reference. Sections, in order:
+ *   1. design tokens   2. document base   3. responsive navigation
+ *   4. stateful components   5. breadcrumb + "see all" links
+ * Direction is switched on <html dir> by js/app.js; every directional rule
+ * below uses logical properties so the layout mirrors with no RTL override.
+ */
+
+/* Nasr School Management System — design tokens
+ * Single source of truth for the visual language. Map these onto the target
+ * codebase's theme layer (CSS vars, Tailwind config, SwiftUI Color set, …).
+ * The prototype markup in index.html carries literal hex values inline; the
+ * table below is what those literals mean.
+ */
+
+:root {
+  /* ---- Brand ---- */
+  --navy-900: #0B2233; /* footer, deepest surface */
+  --navy-800: #0F344F; /* sidebars, primary buttons, headings */
+  --navy-700: #12405E; /* hero texture stripe */
+  --teal-600:  #0E7C86; /* primary accent, links, logo mark, boys campus */
+  --teal-700:  #0A5B62; /* link hover */
+  --teal-800:  #0A6A5F; /* success / present / positive figures */
+  --teal-050:  #E9F2F3; /* teal tint surface */
+  --teal-100:  #E3EDEF;
+  --amber-600: #E08A2E; /* secondary accent, girls campus, active nav edge */
+  --amber-800: #7A4A09; /* text on amber tints */
+  --amber-900: #2A1704; /* text on solid amber */
+  --amber-050: #FDF4E8;
+  --amber-100: #F7E3C4;
+  --amber-150: #FDF0DC;
+  --red-600:   #A33B3B; /* absent / overdue */
+  --red-050:   #F3E1E1;
+
+  /* ---- Neutrals ---- */
+  --ink-900: #10222A; /* body text */
+  --ink-800: #22333C;
+  --ink-700: #37505C; /* secondary text */
+  --ink-600: #5F7480; /* muted text */
+  --ink-400: #8296A0; /* meta text */
+  --ink-300: #A3B2B9; /* disabled text */
+  --line-300: #D7DEE2; /* input borders */
+  --line-200: #DDE3E7; /* button borders */
+  --line-100: #E4E9EC; /* card borders */
+  --line-050: #EDF1F3; /* inner dividers */
+  --line-025: #F1F4F5;
+  --surface-page: #EEF1F3; /* app background */
+  --surface-card: #FFFFFF;
+  --surface-sunk: #F7F9FA; /* table headers, subtle panels */
+  --surface-sunk-2: #F2F5F6; /* inactive segmented buttons */
+  --surface-sunk-3: #F3F6F7;
+
+  /* ---- Typography ----
+   * One family throughout: IBM Plex Sans Arabic (400/500/600/700).
+   * It carries both Arabic and Latin, so LTR and RTL share a single face.
+   */
+  --font-ui: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace; /* image/map placeholders only */
+
+  --fs-hero: 40px;   /* line-height 1.35, weight 700 */
+  --fs-h2: 26px;     /* 1.4 / 700 */
+  --fs-h1-app: 22px; /* 1.3 / 700 — dashboard greeting */
+  --fs-kpi: 32px;    /* 1 / 700 */
+  --fs-lead: 15.5px; /* 1.9 / 400 */
+  --fs-card-title: 14.5px; /* 1.3 / 600 */
+  --fs-body: 13.5px; /* 1.9 / 400 */
+  --fs-nav: 13.5px;  /* 1.3 / 400–600 */
+  --fs-ui: 13px;     /* 1.8 / 400–600 */
+  --fs-sm: 12.5px;
+  --fs-xs: 12px;
+  --fs-2xs: 11.5px;
+  --fs-3xs: 10.5px;  /* sidebar section labels, uppercase-ish eyebrow */
+
+  /* ---- Radius ---- */
+  --r-pill: 999px;
+  --r-lg: 16px;  /* elevated form card */
+  --r-md: 14px;  /* standard card */
+  --r-sm: 11px;  /* inner tiles */
+  --r-xs: 10px;  /* buttons, inputs */
+  --r-2xs: 9px;  /* segmented, small tiles */
+  --r-3xs: 8px;  /* chips, table inputs */
+
+  /* ---- Spacing scale (px) ---- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 10px; --sp-4: 12px;
+  --sp-5: 14px; --sp-6: 16px; --sp-7: 18px; --sp-8: 20px;
+  --sp-9: 24px; --sp-10: 26px; --sp-11: 28px; --sp-12: 34px;
+  --sp-14: 56px; --sp-16: 64px;
+
+  /* ---- Elevation ---- */
+  --shadow-card: 0 2px 10px rgba(15, 52, 79, .06);
+  --shadow-pop: 0 14px 34px rgba(11, 34, 51, .16);
+  --shadow-modal: 0 24px 60px rgba(11, 34, 51, .28);
+
+  /* ---- Layout ---- */
+  --sidebar-w: 252px;
+  --main-min-w: 320px;
+  --grid-min: 320px; /* repeat(auto-fit, minmax(320px, 1fr)) is the dashboard grid */
+}
+
+/* Nasr School Management System — document base
+ * Direction is switched on <html dir> by js/app.js. All directional spacing in
+ * the markup uses logical properties (inset-inline-*, border-inline-*,
+ * text-align:start) so the whole layout mirrors with no RTL-specific CSS.
+ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--surface-page);
+  color: var(--ink-900);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--teal-600);
+  text-decoration: none;
+}
+
+a:hover { color: var(--teal-700); }
+
+button { font-family: inherit; }
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: var(--ink-900);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--teal-600);
+  outline-offset: 2px;
+}
+
+/* Conditional wrappers emitted by the prototype's renderer. They must not
+ * introduce a box of their own — children stay direct participants of the
+ * surrounding flex/grid container. */
+.when { display: contents; }
+.when[hidden] { display: none; }
+
+@keyframes sk {
+  0%   { opacity: .45; }
+  50%  { opacity: .95; }
+  100% { opacity: .45; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Nasr School Management System — responsive navigation
+ *
+ * Desktop (≥901px): the 252px navy sidebar sits in the flow beside the main
+ * column, exactly as designed.
+ *
+ * Mobile (≤900px): the same sidebar becomes an off-canvas drawer. It slides in
+ * from the reading edge — right in Arabic, left in English — over a scrim, and
+ * a sticky navy app bar carrying the menu button takes its place in the flow.
+ * The drawer is the *same* element and the *same* markup as the desktop
+ * sidebar; nothing is duplicated, so the two never drift apart.
+ *
+ * On the public page the drawer holds the site links plus the Apply and Log in
+ * calls to action; the header keeps only the logo, the language switch and the
+ * menu button.
+ *
+ * The login screen needs no navigation: its two-column grid already collapses
+ * to a single column at the same breakpoint.
+ *
+ * This is the one part of the design that cannot be expressed with inline
+ * styles, because it is conditional on viewport width.
+ */
+
+.mob-only { display: none; }
+.drawer-scrim { display: none; }
+
+@media (max-width: 900px) {
+
+  /* Sidebar → drawer */
+  .app-sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: 70;
+    width: 286px;
+    max-width: 86vw;
+    overflow-y: auto;
+    transition: transform .24s ease;
+    box-shadow: 0 0 46px rgba(11, 34, 51, .34);
+  }
+
+  /* Closed position mirrors with direction */
+  [dir="rtl"] .app-sidebar { transform: translateX(106%); }
+  [dir="ltr"] .app-sidebar { transform: translateX(-106%); }
+
+  .app-sidebar[data-open="true"] { transform: none; }
+
+  /* Scrim */
+  .drawer-scrim[data-open="true"] {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(11, 34, 51, .45);
+    animation: drawerIn .18s ease;
+  }
+
+  /* Mobile-only chrome */
+  .mob-only { display: flex; }
+  .desk-only { display: none !important; }
+
+  /* Tighter gutters; the sticky app bar supplies the top spacing */
+  .app-main {
+    padding-inline: 16px !important;
+    padding-top: 0 !important;
+  }
+}
+
+@keyframes drawerIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Nasr School Management System — stateful components
+ *
+ * Everything with a selected / unselected state lives here rather than inline,
+ * because the state is what a real implementation has to model. Static layout
+ * styling stays inline in index.html (see README → "About the design files").
+ */
+
+/* ---------------------------------------------------------------------------
+ * Sidebar navigation item
+ * Used by all three dashboards. Active item: 10% white fill, full-white label,
+ * 3px amber edge on the inline-end side (right in RTL, left in LTR).
+ * ------------------------------------------------------------------------- */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: 11px var(--sp-4);
+  border: none;
+  border-radius: var(--r-2xs);
+  background: transparent;
+  color: rgba(255, 255, 255, .72);
+  font: 400 var(--fs-nav)/1.3 var(--font-ui);
+  text-align: start;
+  cursor: pointer;
+}
+
+.nav-item:hover { background: rgba(255, 255, 255, .06); }
+
+.nav-item.is-active {
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+  font-weight: 600;
+  border-inline-end: 3px solid var(--amber-600);
+}
+
+/* Leading square marker inside a nav item */
+.nav-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .28);
+}
+
+.nav-item.is-active .nav-dot { background: var(--amber-600); }
+
+/* ---------------------------------------------------------------------------
+ * Segmented control — language switch (العربية / English) and campus switch
+ * (Boys / Girls). Sits inside a 3px-padded pill track.
+ * ------------------------------------------------------------------------- */
+.seg-btn {
+  padding: var(--sp-2) var(--sp-4);
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink-600);
+  font: 500 var(--fs-xs)/1 var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.seg-btn.is-active {
+  background: var(--navy-800);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Role picker on the login screen — three side-by-side cards.
+ * ------------------------------------------------------------------------- */
+.role-btn {
+  padding: var(--sp-5) var(--sp-2);
+  border: 1px solid var(--line-300);
+  border-radius: var(--r-xs);
+  background: #fff;
+  color: var(--ink-600);
+  font: 400 var(--fs-sm)/1.3 var(--font-ui);
+  cursor: pointer;
+}
+
+.role-btn.is-active {
+  border: 1.5px solid var(--teal-600);
+  background: #F1F7F8;
+  color: var(--navy-800);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--teal-600);
+}
+
+/* ---------------------------------------------------------------------------
+ * Screen switcher (prototype-only affordance — see README).
+ * ------------------------------------------------------------------------- */
+.screen-btn {
+  padding: var(--sp-2) var(--sp-5);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--r-3xs);
+  background: rgba(255, 255, 255, .06);
+  color: rgba(255, 255, 255, .72);
+  font: 500 var(--fs-sm)/1 var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.screen-btn.is-active {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy-900);
+  font-weight: 600;
+  box-shadow: inset 0 -3px 0 var(--amber-600);
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Breadcrumb — every sub-page of every dashboard.
+ * The admin design owns this pattern; staff and parent reuse it verbatim.
+ * The separator sits in flex order, so the trail reads outward from the
+ * inline start in both directions with no RTL-specific rule.
+ * ------------------------------------------------------------------------- */
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-block-end: 7px;
+}
+
+.crumb-link {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--teal-600);
+  font: 500 var(--fs-xs)/1 var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.crumb-link:hover {
+  color: var(--teal-700);
+  text-decoration: underline;
+}
+
+/* A group crumb whose destination is the open page. It stays in the trail —
+ * the reader still needs the hierarchy — but it stops offering a trip to
+ * where they already are. */
+.crumb-link:disabled {
+  color: var(--ink-400);
+  cursor: default;
+}
+
+.crumb-link:disabled:hover {
+  color: var(--ink-400);
+  text-decoration: none;
+}
+
+.crumb-sep {
+  color: #B4C0C6;
+  font: 400 var(--fs-xs)/1 var(--font-ui);
+}
+
+.crumb-current {
+  color: var(--ink-400);
+  font: 500 var(--fs-xs)/1 var(--font-ui);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+ * "See all" / "Full log" links. They are real destinations, not decoration,
+ * so they carry the pointer and the link colour of the token set.
+ * ------------------------------------------------------------------------- */
+.link-all {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: var(--teal-600);
+  font: 600 var(--fs-sm)/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.link-all:hover {
+  color: var(--teal-700);
+  text-decoration: underline;
+}
+
+/* Popover footer variant — fills the tinted strip at the bottom of the list */
+.link-all--block {
+  display: block;
+  width: 100%;
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--surface-sunk);
+  text-align: start;
+}

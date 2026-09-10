@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مجمع مدارس النصر — Nasr School Complex</title>
+
+<!-- IBM Plex Sans Arabic 400/500/600/700 — one face carries both scripts, so
+     LTR and RTL share a single family (see styles.css → --font-ui). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" style="min-height:100vh;background:#EEF1F3;color:#10222A">
+
+  <div class="when" data-if="isVisitor">
+  <div style="background:#fff">
+    <div class="drawer-scrim" data-open="false" data-action="closeDrawer"></div>
+    <nav class="app-sidebar mob-only" data-open="false" style="background:#0F344F;padding:24px 16px;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;gap:11px;padding:8px 8px 18px">
+        <div style="width:32px;height:32px;border-radius:9px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 15px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+        <div style="flex:1"></div>
+        <button data-action="closeDrawer" style="width:34px;height:34px;flex:none;border-radius:9px;border:1px solid rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.8);font:400 17px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer">×</button>
+      </div>
+      <a href="#" data-action="closeDrawer" style="padding:13px 12px;border-radius:9px;font:500 14px/1.3 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.82)"><span data-i18n="mAbout"></span></a>
+      <a href="#" data-action="closeDrawer" style="padding:13px 12px;border-radius:9px;font:500 14px/1.3 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.82)"><span data-i18n="mLevels"></span></a>
+      <a href="#" data-action="closeDrawer" style="padding:13px 12px;border-radius:9px;font:500 14px/1.3 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.82)"><span data-i18n="mFees"></span></a>
+      <a href="#" data-action="closeDrawer" style="padding:13px 12px;border-radius:9px;font:500 14px/1.3 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.82)"><span data-i18n="mContact"></span></a>
+      <div style="flex:1"></div>
+      <a href="#apply" data-action="closeDrawer" style="text-align:center;padding:15px;border-radius:10px;background:#E08A2E;color:#2A1704;font:600 14px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="vApply"></span></a>
+      <button data-action="goLogin" style="padding:15px;border-radius:10px;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font:600 14px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer"><span data-i18n="loginCtaShort"></span></button>
+    </nav>
+    <header style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:18px 34px;border-bottom:1px solid #E4E9EC;background:#fff">
+      <button class="mob-only" data-action="toggleDrawer" style="width:44px;height:44px;flex:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;border:1px solid #DDE3E7;border-radius:11px;background:#fff;cursor:pointer">
+        <span style="display:block;width:17px;height:2px;border-radius:2px;background:#37505C"></span>
+        <span style="display:block;width:17px;height:2px;border-radius:2px;background:#37505C"></span>
+        <span style="display:block;width:17px;height:2px;border-radius:2px;background:#37505C"></span>
+      </button>
+      <div style="display:flex;align-items:center;gap:11px">
+        <div style="width:34px;height:34px;border-radius:9px;background:#0E7C86;flex:none"></div>
+        <div><div style="font:700 15.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="brand"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="brandSub"></span></div></div>
+      </div>
+      <div style="flex:1"></div>
+      <nav class="desk-only" style="display:flex;flex-wrap:wrap;gap:20px;font:500 13px/1 'IBM Plex Sans Arabic',sans-serif">
+        <a href="#" style="color:#37505C"><span data-i18n="mAbout"></span></a>
+        <a href="#" style="color:#37505C"><span data-i18n="mLevels"></span></a>
+        <a href="#" style="color:#37505C"><span data-i18n="mFees"></span></a>
+        <a href="#" style="color:#37505C"><span data-i18n="mContact"></span></a>
+      </nav>
+      <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#F2F5F6;border:1px solid #E4E9EC">
+        <button data-action="setAr" class="seg-btn" data-lang="ar">العربية</button>
+        <button data-action="setEn" class="seg-btn" data-lang="en">English</button>
+      </div>
+      <button data-action="goLogin" style="font:600 13px/1.35 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:13px 18px;border-radius:10px;border:1px solid #0F344F;background:#fff;color:#0F344F;cursor:pointer"><span data-i18n="loginCtaShort"></span></button>
+    </header>
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#0F344F">
+      <div style="padding:64px 34px;display:flex;flex-direction:column;gap:26px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;align-self:flex-start;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#9BD3D9;background:rgba(14,124,134,.28);padding:8px 12px;border-radius:999px"><span data-i18n="vBadge"></span></span>
+        <h1 style="margin:0;font:700 40px/1.35 'IBM Plex Sans Arabic',sans-serif;color:#fff;text-wrap:pretty;max-width:520px"><span data-i18n="vTitle"></span></h1>
+        <p style="margin:0;font:400 15.5px/1.9 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.7);max-width:520px;text-wrap:pretty"><span data-i18n="vText"></span></p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="#apply" style="font:600 14px/1 'IBM Plex Sans Arabic',sans-serif;padding:15px 22px;border-radius:10px;background:#E08A2E;color:#2A1704"><span data-i18n="vApply"></span></a>
+          <a href="#" style="font:600 14px/1 'IBM Plex Sans Arabic',sans-serif;padding:15px 22px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff"><span data-i18n="vBrochure"></span></a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:30px;padding-top:12px">
+          <div><div style="font:700 24px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">1,248</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vStudents"></span></div></div>
+          <div><div style="font:700 24px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">86</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vStaff"></span></div></div>
+          <div><div style="font:700 24px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">22</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vYears"></span></div></div>
+        </div>
+      </div>
+      <div style="min-height:420px;background:repeating-linear-gradient(135deg,#12405E 0 14px,#0F3A55 14px 28px);display:flex;align-items:center;justify-content:center;padding:32px">
+        <div style="font:400 12.5px/1.9 ui-monospace,Menlo,monospace;color:rgba(255,255,255,.5);text-align:center;max-width:280px"><span data-i18n="imgMain"></span></div>
+      </div>
+    </section>
+
+    <section style="padding:56px 34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;background:#F7F9FA">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:24px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:3px;background:#0E7C86"></span><div style="font:700 16px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="boys"></span></div></div>
+        <p style="margin:0 0 16px;font:400 13.5px/1.9 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="boysText"></span></p>
+        <div style="display:flex;flex-direction:column;gap:9px;font:500 13px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#37505C">
+          <div><span data-i18n="lvlKgB"></span></div><div><span data-i18n="lvlPri"></span></div><div><span data-i18n="lvlMid"></span></div><div><span data-i18n="lvlHigh"></span></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:24px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="width:10px;height:10px;border-radius:3px;background:#E08A2E"></span><div style="font:700 16px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="girls"></span></div></div>
+        <p style="margin:0 0 16px;font:400 13.5px/1.9 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="girlsText"></span></p>
+        <div style="display:flex;flex-direction:column;gap:9px;font:500 13px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#37505C">
+          <div><span data-i18n="lvlKgG"></span></div><div><span data-i18n="lvlPri"></span></div><div><span data-i18n="lvlMid"></span></div><div><span data-i18n="lvlHigh"></span></div>
+        </div>
+      </div>
+      <div style="background:#0F344F;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="font:700 16px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="quick"></span></div>
+        <div style="display:flex;flex-direction:column;gap:12px;font:400 13px/1.7 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.72)">
+          <div style="display:flex;justify-content:space-between;gap:10px"><span><span data-i18n="qDay"></span></span><span style="color:#fff;font-weight:600">7:00 — 13:30</span></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span><span data-i18n="qBus"></span></span><span style="color:#fff;font-weight:600"><span data-i18n="qBusV"></span></span></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span><span data-i18n="qSize"></span></span><span style="color:#fff;font-weight:600"><span data-i18n="qSizeV"></span></span></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span><span data-i18n="qFees"></span></span><span style="color:#fff;font-weight:600"><span data-i18n="qFeesV"></span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" style="padding:56px 34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start">
+      <div style="max-width:460px">
+        <h2 style="margin:0 0 12px;font:700 26px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;text-wrap:pretty"><span data-i18n="applyTitle"></span></h2>
+        <p style="margin:0 0 24px;font:400 14px/1.9 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="applyText"></span></p>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:14px;background:#F7F9FA;border:1px solid #E4E9EC">
+          <div style="font:600 13.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="contactTitle"></span></div>
+          <div style="font:400 13px/1.9 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="contactPhone"></span><br><span data-i18n="contactMail"></span><br><span data-i18n="contactAddr"></span></div>
+          <div style="height:150px;border-radius:11px;background:repeating-linear-gradient(135deg,#EDF1F3 0 12px,#E7ECEE 12px 24px);display:flex;align-items:center;justify-content:center;font:400 12px/1.7 ui-monospace,Menlo,monospace;color:#8296A0;text-align:center"><span data-i18n="mapPh"></span></div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:16px;padding:26px;box-shadow:0 2px 10px rgba(15,52,79,.06)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+          <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="fName"></span></label><input type="text" placeholder="" data-i18n-placeholder="fNamePh" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+          <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="fPhone"></span></label><input type="text" placeholder="05XXXXXXXX" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+          <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="fAge"></span></label><input type="text" placeholder="" data-i18n-placeholder="fAgePh" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+          <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="fCampus"></span></label><select style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"><option><span data-i18n="boys"></span></option><option><span data-i18n="girls"></span></option></select></div>
+          <div style="grid-column:1/-1"><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="fMsg"></span></label><textarea rows="4" placeholder="" data-i18n-placeholder="fMsgPh" style="width:100%;font:400 13.5px/1.8 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A;resize:vertical"></textarea></div>
+        </div>
+        <label style="display:flex;align-items:center;gap:9px;margin:16px 0 18px;font:400 12.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><input type="checkbox" style="accent-color:#0E7C86;width:15px;height:15px"><span data-i18n="fConsent"></span></label>
+        <button style="width:100%;font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:15px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="fSubmit"></span></button>
+        <p style="margin:14px 0 0;font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="haveAcc"></span> <a href="#" data-action="goLogin" style="cursor:pointer"><span data-i18n="loginWord"></span></a></p>
+      </div>
+    </section>
+
+    <footer style="padding:26px 34px;background:#0B2233;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <div style="font:400 12.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="footerRights"></span></div>
+      <div style="flex:1"></div>
+      <div style="display:flex;gap:18px;font:400 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><a href="#" style="color:rgba(255,255,255,.7)"><span data-i18n="privacy"></span></a><a href="#" style="color:rgba(255,255,255,.7)"><span data-i18n="jobs"></span></a><a href="#" style="color:rgba(255,255,255,.7)"><span data-i18n="mContact"></span></a></div>
+    </footer>
+  </div>
+  </div>
+
+  <div class="when" data-if="isStaff">
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;min-height:100vh">
+    <div class="drawer-scrim" data-open="false" data-action="closeDrawer"></div>
+    <aside class="app-sidebar" data-open="false" style="width:252px;flex:none;background:#0F344F;padding:24px 16px;display:flex;flex-direction:column;gap:22px">
+      <button data-action="goSchedule" style="display:flex;align-items:center;gap:10px;padding:8px;margin:0 0 -4px;border:none;background:transparent;cursor:pointer;text-align:start;width:100%">
+        <div style="width:32px;height:32px;border-radius:9px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 15px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </button>
+      <nav style="display:flex;flex-direction:column;gap:3px">
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:0 10px 8px"><span data-i18n="secDaily"></span></div>
+        <button data-action="goSchedule" class="nav-item" data-nav="overview,schedule"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mMySchedule"></span></span></button>
+        <button data-action="goAtt" class="nav-item" data-nav="attendance"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mAttendance"></span></span></button>
+        <button data-action="goGrades" class="nav-item" data-nav="grades"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mGradesNav"></span></span></button>
+        <button data-action="goMyClasses" class="nav-item" data-nav="myclasses"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mMyClasses"></span></span></button>
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:18px 10px 8px"><span data-i18n="secComms"></span></div>
+        <button data-action="goMsgs" class="nav-item" data-nav="messages"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mMessages"></span></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;background:#E08A2E;color:#2A1704;border-radius:999px;padding:4px 7px">3</span></button>
+        <button data-action="goPQ" class="nav-item" data-nav="parentq"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mParentQ"></span></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;background:#E08A2E;color:#2A1704;border-radius:999px;padding:4px 7px">4</span></button>
+        <button data-action="goTasks" class="nav-item" data-nav="tasks"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="mTasks"></span></span></button>
+        <div class="when" data-if="isGirlsStaff">
+        <div>
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:18px 10px 8px"><span data-i18n="chatSecGirls"></span></div>
+        <button data-action="goChat" class="nav-item" data-nav="chat"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="chatGirlsNav"></span></span></button>
+          <div style="margin:10px 2px 0;padding:10px 12px;border-radius:9px;background:rgba(255,255,255,.05);font:400 11px/1.7 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.45)"><span data-i18n="noteGirls"></span></div>
+        </div>
+        </div>
+        <div class="when" data-if="isBoysStaff">
+        <div>
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:18px 10px 8px"><span data-i18n="chatSecBoys"></span></div>
+        <button data-action="goChat" class="nav-item" data-nav="chat"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="chatBoysNav"></span></span></button>
+          <div style="margin:10px 2px 0;padding:10px 12px;border-radius:9px;background:rgba(255,255,255,.05);font:400 11px/1.7 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.45)"><span data-i18n="noteBoys"></span></div>
+        </div>
+        </div>
+      </nav>
+      <div style="flex:1"></div>
+      <div class="when" data-if="isGirlsStaff">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:11px;background:rgba(255,255,255,.06)">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E08A2E;color:#2A1704;display:flex;align-items:center;justify-content:center;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">HN</div>
+        <div><div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="staffNameG"></span></div><div style="font:400 11px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="staffRoleG"></span></div></div>
+      </div>
+      </div>
+      <div class="when" data-if="isBoysStaff">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:11px;background:rgba(255,255,255,.06)">
+        <div style="width:34px;height:34px;border-radius:50%;background:#0E7C86;color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">KS</div>
+        <div><div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="staffNameB"></span></div><div style="font:400 11px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="staffRoleB"></span></div></div>
+      </div>
+      </div>
+    </aside>
+
+    <main class="app-main" style="flex:1;min-width:320px;padding:26px 28px 40px;display:flex;flex-direction:column;gap:18px">
+      <div class="mob-only" style="position:sticky;top:0;z-index:40;align-items:center;gap:12px;margin:0 -16px 2px;padding:12px 16px;background:#0F344F">
+        <button data-action="toggleDrawer" style="width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer">
+          <span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span>
+        </button>
+        <div style="width:28px;height:28px;border-radius:8px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 14px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </div>
+      <header style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <div>
+          <div class="when" data-if="sNotOverview">
+          <nav class="crumb" data-i18n-aria-label="crumbAria">
+            <button type="button" class="crumb-link" data-action="goOverview"><span data-dyn="crumbRoot"></span></button>
+            <span class="when" data-if="crumbGroup">
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <button type="button" class="crumb-link crumb-group" data-action="goGroup"><span data-dyn="crumbGroup"></span></button>
+            </span>
+            <span class="crumb-sep" aria-hidden="true">/</span>
+            <span class="crumb-current" aria-current="page"><span data-dyn="secTitle"></span></span>
+          </nav>
+          </div>
+          <div class="when" data-if="isGirlsStaff"><h1 style="margin:0 0 4px;font:700 22px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="greetG"></span></h1></div>
+          <div class="when" data-if="isBoysStaff"><h1 style="margin:0 0 4px;font:700 22px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="greetB"></span></h1></div>
+          <div style="font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="staffDay"></span></div>
+        </div>
+        <div style="flex:1"></div>
+        <div style="position:relative">
+          <button data-action="toggleNotif" style="position:relative;width:42px;height:42px;border-radius:11px;border:1px solid #DDE3E7;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">
+            <span style="display:block;width:13px;height:13px;border:2px solid #37505C;border-bottom:none;border-radius:7px 7px 0 0"></span>
+            <span style="position:absolute;bottom:9px;width:17px;height:2px;background:#37505C;border-radius:2px"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;position:absolute;top:6px;inset-inline-end:6px;min-width:17px;height:17px;border-radius:999px;background:#E08A2E;color:#2A1704;font:700 10px/17px 'IBM Plex Sans Arabic',sans-serif">4</span>
+          </button>
+          <div class="when" data-if="notifOpen">
+          <div style="position:absolute;top:50px;inset-inline-end:0;width:290px;z-index:30;background:#fff;border:1px solid #E4E9EC;border-radius:13px;box-shadow:0 14px 34px rgba(11,34,51,.16);overflow:hidden">
+            <div style="padding:13px 16px;border-bottom:1px solid #EDF1F3;font:600 13px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="notifTitle"></span></div>
+            <div style="padding:13px 16px;border-bottom:1px solid #F4F7F8;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#E08A2E;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="nb3"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="nb3s"></span></div></div></div>
+            <div style="padding:13px 16px;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#0E7C86;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ann1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ann1s"></span></div></div></div>
+            <button type="button" class="link-all link-all--block" data-action="goMsgs" data-hide-on="messages"><span data-i18n="notifAll"></span></button>
+          </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#fff;border:1px solid #E4E9EC">
+          <button data-action="setAr" class="seg-btn" data-lang="ar">العربية</button>
+          <button data-action="setEn" class="seg-btn" data-lang="en">English</button>
+        </div>
+        <button data-action="logout" style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 14px;border-radius:10px;border:1px solid #DDE3E7;background:#fff;color:#5F7480;cursor:pointer"><span data-i18n="logout"></span></button>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;white-space:nowrap"><span data-i18n="thCampus"></span></span>
+          <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#F7F9FA;border:1px solid #E4E9EC">
+            <button data-action="setBoysStaff" class="seg-btn" data-campus="boys"><span data-i18n="tagBoys"></span></button>
+            <button data-action="setGirlsStaff" class="seg-btn" data-campus="girls"><span data-i18n="tagGirls"></span></button>
+          </div>
+        </div>
+        <button style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="markNow"></span></button>
+      </header>
+      <div class="when" data-if="sSchedule">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:16px">
+          <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="weekTitle"></span></div>
+          <div style="flex:1"></div>
+          <div style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="lessonsWeek"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;padding:8px;background:#F3F6F7;border-radius:8px;text-align:center"><span data-i18n="sun"></span></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls4a"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">07:30 — 08:15</div></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls5b"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">09:00 — 09:45</div></div>
+            <div style="padding:11px;border-radius:9px;background:#FDF4E8;border-inline-end:3px solid #E08A2E"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="breakDuty"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#96662A">10:00 — 10:20</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;padding:8px;background:#F3F6F7;border-radius:8px;text-align:center"><span data-i18n="mon"></span></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls6a"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">07:30 — 08:15</div></div>
+            <div style="padding:11px;border-radius:9px;background:#F7F9FA;border-inline-end:3px solid #DDE3E7"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="freePeriod"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">09:00 — 09:45</div></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls4b"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">10:30 — 11:15</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;padding:8px;background:#F3F6F7;border-radius:8px;text-align:center"><span data-i18n="tue"></span></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls5a"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">08:20 — 09:05</div></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="mathActivity"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">11:20 — 12:05</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;padding:8px;background:#F3F6F7;border-radius:8px;text-align:center"><span data-i18n="wed"></span></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls6b"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">07:30 — 08:15</div></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls4a"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">10:30 — 11:15</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;padding:8px;background:#F3F6F7;border-radius:8px;text-align:center"><span data-i18n="thu"></span></div>
+            <div style="padding:11px;border-radius:9px;background:#E9F2F3;border-inline-end:3px solid #0E7C86"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="subjMathShort"></span> · <span data-i18n="cls5b"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">08:20 — 09:05</div></div>
+            <div style="padding:11px;border-radius:9px;background:#F7F9FA;border-inline-end:3px solid #DDE3E7"><div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="deptMeeting"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">12:10 — 12:50</div></div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #EDF1F3">
+          <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:10px"><span data-i18n="upcoming"></span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="white-space:nowrap;display:flex;align-items:center;gap:7px;font:500 12px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:9px 12px;border-radius:999px;background:#F7E3C4;color:#7A4A09"><span style="width:7px;height:7px;border-radius:50%;background:#E08A2E"></span><span data-i18n="ev2"></span> · <span data-i18n="ev2d"></span></span>
+            <span style="white-space:nowrap;display:flex;align-items:center;gap:7px;font:500 12px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:9px 12px;border-radius:999px;background:#F3E1E1;color:#8E3232"><span style="width:7px;height:7px;border-radius:50%;background:#A33B3B"></span><span data-i18n="ev3"></span> · <span data-i18n="ev3d"></span></span>
+            <span style="white-space:nowrap;display:flex;align-items:center;gap:7px;font:500 12px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:9px 12px;border-radius:999px;background:#E9F2F3;color:#0A6A5F"><span style="width:7px;height:7px;border-radius:50%;background:#0E7C86"></span><span data-i18n="ev1"></span> · <span data-i18n="ev1d"></span></span>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sPQ">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:6px">
+            <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pqTitle"></span></div>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="pqPending"></span></span>
+            <div style="flex:1"></div>
+            <div style="display:flex;gap:5px">
+              <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 11px;border-radius:8px;background:#0F344F;color:#fff"><span data-i18n="pqTabPending"></span></span>
+              <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480"><span data-i18n="pqTabAnswered"></span></span>
+            </div>
+          </div>
+          <div style="font:400 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:14px"><span data-i18n="pqSla"></span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:13px;border:1px solid #EDF1F3;border-radius:11px;border-inline-end:3px solid #E08A2E">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:7px">
+                <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pq1"></span></div>
+                <span style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="pq1meta"></span></span>
+                <div style="flex:1"></div>
+                <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:5px 9px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="pq1st"></span></span>
+              </div>
+              <div style="font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="pq1txt"></span></div>
+              <div style="display:flex;gap:8px;margin-top:11px"><span style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:9px 14px;border-radius:8px;background:#0F344F;color:#fff;cursor:pointer"><span data-i18n="pqReply"></span></span><span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:9px 14px;border-radius:8px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="pqEscalate"></span></span></div>
+            </div>
+            <div style="padding:13px;border:1px solid #EDF1F3;border-radius:11px;border-inline-end:3px solid #E08A2E">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:7px">
+                <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pq2"></span></div>
+                <span style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="pq2meta"></span></span>
+                <div style="flex:1"></div>
+                <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:5px 9px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="pq2st"></span></span>
+              </div>
+              <div style="font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="pq2txt"></span></div>
+            </div>
+            <div style="padding:13px;border:1px solid #EDF1F3;border-radius:11px;border-inline-end:3px solid #0A6A5F;background:#FAFCFC">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:7px">
+                <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pq3"></span></div>
+                <span style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="pq3meta"></span></span>
+                <div style="flex:1"></div>
+                <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:5px 9px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="pq3st"></span></span>
+              </div>
+              <div style="font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="pq3txt"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sChat">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div class="when" data-if="isGirlsStaff">
+
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px;display:flex;flex-direction:column">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid #EDF1F3">
+            <span style="width:10px;height:10px;border-radius:3px;background:#E08A2E;flex:none"></span>
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="chatGTitle"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="chatGSub"></span></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:16px 0;flex:1">
+            <div style="display:flex;gap:10px">
+              <div style="width:32px;height:32px;border-radius:50%;background:#F7EADA;color:#8A5510;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">LQ</div>
+              <div><div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px"><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cg1n"></span></span><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">08:12</span></div><div style="padding:11px 13px;border-radius:12px;background:#F2F5F6;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#22333C"><span data-i18n="cg1m"></span></div></div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <div style="width:32px;height:32px;border-radius:50%;background:#F7EADA;color:#8A5510;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">RH</div>
+              <div><div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px"><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cg2n"></span></span><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">08:20</span></div><div style="padding:11px 13px;border-radius:12px;background:#F2F5F6;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#22333C"><span data-i18n="cg2m"></span></div></div>
+            </div>
+            <div style="align-self:flex-end;max-width:82%">
+              <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px;justify-content:flex-end"><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">08:34</span><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="me"></span></span></div>
+              <div style="padding:11px 13px;border-radius:12px;background:#0F344F;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="cgMe"></span></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;padding-top:14px;border-top:1px solid #EDF1F3">
+            <input type="text" placeholder="" data-i18n-placeholder="chatGPh" style="flex:1;min-width:0;font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A">
+            <button style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#0F344F;color:#fff;cursor:pointer"><span data-i18n="send"></span></button>
+          </div>
+        </div>
+        </div>
+        <div class="when" data-if="isBoysStaff">
+
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px;display:flex;flex-direction:column">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid #EDF1F3">
+            <span style="width:10px;height:10px;border-radius:3px;background:#0E7C86;flex:none"></span>
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="chatBTitle"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="chatBSub"></span></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:16px 0;flex:1">
+            <div style="display:flex;gap:10px">
+              <div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">KS</div>
+              <div><div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px"><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cb1n"></span></span><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">07:48</span></div><div style="padding:11px 13px;border-radius:12px;background:#F2F5F6;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#22333C"><span data-i18n="cb1m"></span></div></div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">TM</div>
+              <div><div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px"><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cb2n"></span></span><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">08:02</span></div><div style="padding:11px 13px;border-radius:12px;background:#F2F5F6;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#22333C"><span data-i18n="cb2m"></span></div></div>
+            </div>
+            <div style="align-self:flex-end;max-width:82%">
+              <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:5px;justify-content:flex-end"><span style="font:400 11px/1 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9">08:15</span><span style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="me"></span></span></div>
+              <div style="padding:11px 13px;border-radius:12px;background:#0F344F;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="cbMe"></span></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;padding-top:14px;border-top:1px solid #EDF1F3">
+            <input type="text" placeholder="" data-i18n-placeholder="chatBPh" style="flex:1;min-width:0;font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A">
+            <button style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#0F344F;color:#fff;cursor:pointer"><span data-i18n="send"></span></button>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sAtt">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:6px">
+            <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="attMark"></span> <span data-i18n="cls4a"></span></div>
+            <div style="flex:1"></div>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="incomplete"></span></span>
+          </div>
+          <div style="font:400 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:14px"><span data-i18n="period1"></span></div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:10px 12px;border:1px solid #EDF1F3;border-radius:10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">NM</div>
+              <div style="flex:1;min-width:120px;font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s1"></span></div>
+              <div style="display:flex;gap:5px">
+                <span style="font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#0A6A5F;color:#fff;cursor:pointer"><span data-i18n="present"></span></span>
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="lateW"></span></span>
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="absent"></span></span>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:10px 12px;border:1px solid #EDF1F3;border-radius:10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">RD</div>
+              <div style="flex:1;min-width:120px;font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s3"></span></div>
+              <div style="display:flex;gap:5px">
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="present"></span></span>
+                <span style="font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="lateW"></span></span>
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="absent"></span></span>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:10px 12px;border:1px solid #EDF1F3;border-radius:10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">SQ</div>
+              <div style="flex:1;min-width:120px;font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s2"></span></div>
+              <div style="display:flex;gap:5px">
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="present"></span></span>
+                <span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#F2F5F6;color:#5F7480;cursor:pointer"><span data-i18n="lateW"></span></span>
+                <span style="font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 11px;border-radius:8px;background:#A33B3B;color:#fff;cursor:pointer"><span data-i18n="absent"></span></span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px">
+            <button style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#0F344F;color:#fff;cursor:pointer"><span data-i18n="saveAtt"></span></button>
+            <span style="font:400 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="attProgress"></span></span>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sGrades">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px">
+              <div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="gradesTitle"></span></div>
+              <div style="flex:1"></div>
+              <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportXls"></span></button>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px;gap:10px;font:600 11.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;padding-bottom:10px;border-bottom:1px solid #EDF1F3">
+              <div><span data-i18n="thStudent"></span></div><div><span data-i18n="thScore"></span></div><div><span data-i18n="thGradeLabel"></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8">
+              <div style="font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s1"></span></div>
+              <input type="text" value="19" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:9px;border:1px solid #D7DEE2;border-radius:8px;text-align:center;color:#10222A;width:100%">
+              <div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F"><span data-i18n="excellent"></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8">
+              <div style="font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s3"></span></div>
+              <input type="text" value="16" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:9px;border:1px solid #D7DEE2;border-radius:8px;text-align:center;color:#10222A;width:100%">
+              <div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="veryGood"></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 90px 90px;gap:10px;align-items:center;padding:11px 0">
+              <div style="font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s2"></span></div>
+              <input type="text" placeholder="—" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:9px;border:1px solid #E08A2E;border-radius:8px;text-align:center;background:#FDF9F3;color:#10222A;width:100%">
+              <div style="font:500 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="pendingWord"></span></div>
+            </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sTasks">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif;margin-bottom:14px"><span data-i18n="tasksTitle"></span></div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <label style="display:flex;align-items:center;gap:11px;font:500 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><input type="checkbox" style="accent-color:#0E7C86;width:16px;height:16px"><span data-i18n="task1"></span> <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:500 11px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#8A5510;background:#FDF0DC;padding:5px 8px;border-radius:999px"><span data-i18n="todayTag"></span></span></label>
+              <label style="display:flex;align-items:center;gap:11px;font:500 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><input type="checkbox" style="accent-color:#0E7C86;width:16px;height:16px"><span data-i18n="task2"></span></label>
+              <label style="display:flex;align-items:center;gap:11px;font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#A3B2B9;text-decoration:line-through"><input type="checkbox" checked="checked" style="accent-color:#0E7C86;width:16px;height:16px"><span data-i18n="task3"></span></label>
+            </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="sMsgs">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif;margin-bottom:14px"><span data-i18n="annTitle"></span></div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="padding:13px;border-radius:11px;background:#F5F8F9"><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="ann1"></span></div><div style="font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="ann1s"></span></div></div>
+              <div style="padding:13px;border-radius:11px;background:#F5F8F9"><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="ann2"></span></div><div style="font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="ann2s"></span></div></div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="when" data-if="sClassesSec">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="myClsTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="myClsSub"></span></div></div>
+          <div style="flex:1"></div>
+          <button style="font:600 12px/1.2 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportXls"></span></button>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;font:600 11.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;padding-bottom:10px;border-bottom:1px solid #EDF1F3">
+          <div><span data-i18n="thClass"></span></div><div><span data-i18n="thCount"></span></div><div><span data-i18n="thRoom"></span></div><div><span data-i18n="thAvgCol"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls4a"></span></div><div style="color:#37505C">27</div><div style="color:#37505C">A-104</div><div style="color:#0A6A5F;font-weight:600">91%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls4b"></span></div><div style="color:#37505C">26</div><div style="color:#37505C">A-106</div><div style="color:#0A6A5F;font-weight:600">88%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls5a"></span></div><div style="color:#37505C">28</div><div style="color:#37505C">A-108</div><div style="color:#0A6A5F;font-weight:600">90%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls5b"></span></div><div style="color:#37505C">25</div><div style="color:#37505C">A-110</div><div style="color:#0A6A5F;font-weight:600">93%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls6a"></span></div><div style="color:#37505C">29</div><div style="color:#37505C">A-112</div><div style="color:#0A6A5F;font-weight:600">87%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 0;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="cls6b"></span></div><div style="color:#37505C">27</div><div style="color:#37505C">A-114</div><div style="color:#0A6A5F;font-weight:600">92%</div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <div class="when" data-if="isAdmin">
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;min-height:100vh">
+    <div class="drawer-scrim" data-open="false" data-action="closeDrawer"></div>
+    <aside class="app-sidebar" data-open="false" style="width:252px;flex:none;background:#0F344F;padding:24px 16px;display:flex;flex-direction:column;gap:26px">
+      <button data-action="goOverview" style="display:flex;align-items:center;gap:10px;padding:8px;margin:0 0 -4px;border:none;background:transparent;cursor:pointer;text-align:start;width:100%">
+        <div style="width:32px;height:32px;border-radius:9px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 15px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </button>
+      <nav style="display:flex;flex-direction:column;gap:3px">
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:0 10px 8px"><span data-i18n="secAdmin"></span></div>
+        <button data-action="goOverview" class="nav-item" data-nav="overview"><span class="nav-dot"></span><span data-i18n="mOverview"></span></button>
+        <button data-action="goStudents" class="nav-item" data-nav="students"><span class="nav-dot"></span><span data-i18n="mStudents"></span></button>
+        <button data-action="goStaffSec" class="nav-item" data-nav="staff"><span class="nav-dot"></span><span data-i18n="mStaffNav"></span></button>
+        <button data-action="goClasses" class="nav-item" data-nav="classes"><span class="nav-dot"></span><span data-i18n="mClasses"></span></button>
+        <button data-action="goCal" class="nav-item" data-nav="cal"><span class="nav-dot"></span><span data-i18n="mCalendarNav"></span></button>
+        <button data-action="goReports" class="nav-item" data-nav="reports"><span class="nav-dot"></span><span data-i18n="mReports"></span></button>
+        <button data-action="goFinance" class="nav-item" data-nav="finance"><span class="nav-dot"></span><span data-i18n="mFinance"></span></button>
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:18px 10px 8px"><span data-i18n="secSystem"></span></div>
+        <button data-action="goLog" class="nav-item" data-nav="log"><span class="nav-dot"></span><span data-i18n="mLogNav"></span></button>
+        <button data-action="goSettings" class="nav-item" data-nav="settings"><span class="nav-dot"></span><span data-i18n="mSettings"></span></button>
+      </nav>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:11px;background:rgba(255,255,255,.06)">
+        <div style="width:34px;height:34px;border-radius:50%;background:#0E7C86;color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">AS</div>
+        <div><div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="adminName"></span></div><div style="font:400 11px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="adminRole"></span></div></div>
+      </div>
+    </aside>
+
+    
+    <main class="app-main" style="flex:1;min-width:320px;padding:26px 28px 40px;display:flex;flex-direction:column;gap:20px">
+      <div class="mob-only" style="position:sticky;top:0;z-index:40;align-items:center;gap:12px;margin:0 -16px 2px;padding:12px 16px;background:#0F344F">
+        <button data-action="toggleDrawer" style="width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer">
+          <span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span>
+        </button>
+        <div style="width:28px;height:28px;border-radius:8px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 14px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </div>
+      <header style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <div>
+          <div class="when" data-if="aNotOverview">
+          <nav class="crumb" data-i18n-aria-label="crumbAria">
+            <button type="button" class="crumb-link" data-action="goOverview"><span data-dyn="crumbRoot"></span></button>
+            <span class="when" data-if="crumbGroup">
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <button type="button" class="crumb-link crumb-group" data-action="goGroup"><span data-dyn="crumbGroup"></span></button>
+            </span>
+            <span class="crumb-sep" aria-hidden="true">/</span>
+            <span class="crumb-current" aria-current="page"><span data-dyn="secTitle"></span></span>
+          </nav>
+          </div>
+          <h1 style="margin:0 0 4px;font:700 22px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-dyn="secTitle"></span></h1>
+          <div style="font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="termLine"></span></div>
+        </div>
+        <div style="flex:1"></div>
+        <input type="text" placeholder="" data-i18n-placeholder="searchPh" style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:11px 14px;border:1px solid #DDE3E7;border-radius:10px;background:#fff;min-width:200px;color:#10222A">
+        <div style="position:relative">
+          <button data-action="toggleNotif" style="position:relative;width:42px;height:42px;border-radius:11px;border:1px solid #DDE3E7;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">
+            <span style="display:block;width:13px;height:13px;border:2px solid #37505C;border-bottom:none;border-radius:7px 7px 0 0"></span>
+            <span style="position:absolute;bottom:9px;width:17px;height:2px;background:#37505C;border-radius:2px"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;position:absolute;top:6px;inset-inline-end:6px;min-width:17px;height:17px;border-radius:999px;background:#E08A2E;color:#2A1704;font:700 10px/17px 'IBM Plex Sans Arabic',sans-serif">3</span>
+          </button>
+          <div class="when" data-if="notifOpen">
+          <div style="position:absolute;top:50px;inset-inline-end:0;width:290px;z-index:30;background:#fff;border:1px solid #E4E9EC;border-radius:13px;box-shadow:0 14px 34px rgba(11,34,51,.16);overflow:hidden">
+            <div style="padding:13px 16px;border-bottom:1px solid #EDF1F3;font:600 13px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="notifTitle"></span></div>
+            <div style="padding:13px 16px;border-bottom:1px solid #F4F7F8;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#E08A2E;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="nb1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="nb1s"></span></div></div></div>
+            <div style="padding:13px 16px;border-bottom:1px solid #F4F7F8;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#0E7C86;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="nb2"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="nb2s"></span></div></div></div>
+            <div style="padding:13px 16px;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#0E7C86;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="nb3"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="nb3s"></span></div></div></div>
+            <button type="button" class="link-all link-all--block" data-action="goLog" data-hide-on="log"><span data-i18n="notifAll"></span></button>
+          </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#fff;border:1px solid #E4E9EC">
+          <button data-action="setAr" class="seg-btn" data-lang="ar">العربية</button>
+          <button data-action="setEn" class="seg-btn" data-lang="en">English</button>
+        </div>
+        <button data-action="logout" style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 14px;border-radius:10px;border:1px solid #DDE3E7;background:#fff;color:#5F7480;cursor:pointer"><span data-i18n="logout"></span></button>
+        <div class="when" data-if="aStudents">
+        <button data-action="openModal" style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 18px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="addStudent"></span></button>
+        </div>
+        <div class="when" data-if="aStaffSec">
+        <button data-action="openTeacherModal" style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 18px;border-radius:10px;border:none;background:#0E7C86;color:#fff;cursor:pointer"><span data-i18n="addTeacher"></span></button>
+        </div>
+        <div class="when" data-if="aClasses">
+        <button data-action="noop" style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 18px;border-radius:10px;border:none;background:#0E7C86;color:#fff;cursor:pointer"><span data-i18n="addClass"></span></button>
+        </div>
+        <div class="when" data-if="aFinance">
+        <button data-action="noop" style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 18px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="addInvoice"></span></button>
+        </div>
+      </header>
+      <div class="when" data-if="aOverview">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:14px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px 18px 16px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kStudents"></span></div>
+          <div style="font:700 32px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F" data-live="studentCount">1,248</div>
+          <div class="when" data-if="showTrends"><div style="margin-top:10px;font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#0E7C86"><span data-i18n="tStudents"></span></div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px 18px 16px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kStaff"></span></div>
+          <div style="font:700 32px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F" data-live="staffCount">86</div>
+          <div class="when" data-if="showTrends"><div style="margin-top:10px;font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="tStaff"></span></div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px 18px 16px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kClasses"></span></div>
+          <div style="font:700 32px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F">42</div>
+          <div class="when" data-if="showTrends"><div style="margin-top:10px;font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="tClasses"></span></div></div>
+        </div>
+        <div style="background:#0F344F;border:1px solid #0F344F;border-radius:14px;padding:18px 18px 16px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.6);margin-bottom:12px"><span data-i18n="kRevenue"></span></div>
+          <div style="font:700 32px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">1.24<span style="font:600 15px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.7)"><span data-i18n="millionUnit"></span></span></div>
+          <div class="when" data-if="showTrends"><div style="margin-top:10px;font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#F2B366"><span data-i18n="tRevenue"></span></div></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aOverview">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px">
+            <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="attTitle"></span></div>
+            <div style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="attAvg"></span></div>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:14px;height:150px;border-bottom:1px solid #EDF1F3">
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%"><div style="height:78%;background:#0E7C86;border-radius:6px 6px 0 0"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%"><div style="height:92%;background:#0E7C86;border-radius:6px 6px 0 0"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%"><div style="height:86%;background:#0E7C86;border-radius:6px 6px 0 0"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%"><div style="height:96%;background:#0E7C86;border-radius:6px 6px 0 0"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%"><div style="height:64%;background:#E08A2E;border-radius:6px 6px 0 0"></div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:10px;font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">
+            <span><span data-i18n="sun"></span></span><span><span data-i18n="mon"></span></span><span><span data-i18n="tue"></span></span><span><span data-i18n="wed"></span></span><span><span data-i18n="thu"></span></span>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif;margin-bottom:4px"><span data-i18n="alerts"></span></div>
+          <div style="display:flex;gap:12px;padding:13px;border-radius:11px;background:#FDF4E8;border:1px solid #F4E0C2">
+            <div style="width:4px;border-radius:4px;background:#E08A2E;flex:none"></div>
+            <div><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="al1"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#96662A"><span data-i18n="al1s"></span></div></div>
+          </div>
+          <div style="display:flex;gap:12px;padding:13px;border-radius:11px;background:#F5F8F9;border:1px solid #E4EAEC">
+            <div style="width:4px;border-radius:4px;background:#0E7C86;flex:none"></div>
+            <div><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="al2"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="al2s"></span></div></div>
+          </div>
+          <div style="display:flex;gap:12px;padding:13px;border-radius:11px;background:#F5F8F9;border:1px solid #E4EAEC">
+            <div style="width:4px;border-radius:4px;background:#0E7C86;flex:none"></div>
+            <div><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="al3"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="al3s"></span></div></div>
+          </div>
+          <div style="flex:1"></div>
+          <button type="button" class="link-all" style="font-size:13px" data-action="openNotif"><span data-i18n="allAlerts"></span></button>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aCal">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="calTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="calSub"></span></div></div>
+            <div style="flex:1"></div>
+            <button type="button" class="link-all" data-action="goCal" data-hide-on="cal"><span data-i18n="calFull"></span></button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#F5F8F9">
+              <span style="width:8px;height:8px;border-radius:50%;background:#0E7C86;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ev1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ev1d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E9F2F3;color:#0A6A5F"><span data-i18n="tEvent"></span></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#FDF4E8;border:1px solid #F4E0C2">
+              <span style="width:8px;height:8px;border-radius:50%;background:#E08A2E;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="ev2"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#96662A"><span data-i18n="ev2d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F7E3C4;color:#7A4A09"><span data-i18n="tExam"></span></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#F5F8F9">
+              <span style="width:8px;height:8px;border-radius:50%;background:#A33B3B;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ev3"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ev3d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F3E1E1;color:#8E3232"><span data-i18n="tHoliday"></span></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#F5F8F9">
+              <span style="width:8px;height:8px;border-radius:50%;background:#0E7C86;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ev4"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ev4d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E9F2F3;color:#0A6A5F"><span data-i18n="tEvent"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aReports">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:18px">
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cmpTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="cmpSub"></span></div></div>
+            <div style="flex:1"></div>
+            <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportPdf"></span></button>
+            <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportXls"></span></button>
+          </div>
+          <div style="display:flex;gap:16px;margin-bottom:16px;font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:3px;background:#0F344F"></span><span data-i18n="boys"></span></span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:3px;background:#E08A2E"></span><span data-i18n="girls"></span></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div>
+              <div style="display:flex;justify-content:space-between;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span><span data-i18n="cmpAvg"></span></span><span style="color:#8296A0">88% · 91%</span></div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:88%;height:9px;border-radius:99px;background:#0F344F"></div></div>
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:91%;height:9px;border-radius:99px;background:#E08A2E"></div></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span><span data-i18n="cmpAtt"></span></span><span style="color:#8296A0">93% · 96%</span></div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:93%;height:9px;border-radius:99px;background:#0F344F"></div></div>
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:96%;height:9px;border-radius:99px;background:#E08A2E"></div></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span><span data-i18n="cmpPass"></span></span><span style="color:#8296A0">95% · 97%</span></div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:95%;height:9px;border-radius:99px;background:#0F344F"></div></div>
+                <div style="height:9px;border-radius:99px;background:#EEF2F3"><div style="width:97%;height:9px;border-radius:99px;background:#E08A2E"></div></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid #EDF1F3">
+            <div style="padding:14px;border-radius:11px;background:#F5F8F9"><div style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:8px"><span data-i18n="cmpTermNow"></span></div><div style="font:700 22px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F">89.5%</div><div style="margin-top:8px;font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F">▲ 2.4</div></div>
+            <div style="padding:14px;border-radius:11px;background:#F5F8F9"><div style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:8px"><span data-i18n="cmpTermPrev"></span></div><div style="font:700 22px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">87.1%</div><div style="margin-top:8px;font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">—</div></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aOverview">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="qaTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="qaSub"></span></div></div>
+          <div style="flex:1"></div>
+          <button type="button" class="link-all" data-action="goReports"><span data-i18n="qaReport"></span></button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+          <div style="padding:16px;border-radius:11px;background:#F5F8F9"><div style="font:400 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:9px"><span data-i18n="qaPendBoys"></span></div><div style="font:700 26px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F">12</div></div>
+          <div style="padding:16px;border-radius:11px;background:#F5F8F9"><div style="font:400 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:9px"><span data-i18n="qaPendGirls"></span></div><div style="font:700 26px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F">9</div></div>
+          <div style="padding:16px;border-radius:11px;background:#F5F8F9"><div style="font:400 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:9px"><span data-i18n="qaAvgTime"></span></div><div style="font:700 26px/1 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F">7<span style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="hoursUnit"></span></span></div></div>
+          <div style="padding:16px;border-radius:11px;background:#FDF4E8;border:1px solid #F4E0C2"><div style="font:400 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#96662A;margin-bottom:9px"><span data-i18n="qaOver"></span></div><div style="font:700 26px/1 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09">3</div></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aStaffSec">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #EDF1F3">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="staffMgmt"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="staffMgmtSub"></span></div></div>
+          <div style="flex:1"></div>
+          <div style="display:flex;gap:6px">
+            <span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 12px;border-radius:8px;background:#0F344F;color:#fff"><span data-i18n="boysCount"></span></span>
+            <span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 12px;border-radius:8px;background:#F2F5F6;color:#5F7480"><span data-i18n="girlsCount"></span></span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;padding:12px 20px;background:#F7F9FA;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+          <div><span data-i18n="thTeacher"></span></div><div><span data-i18n="thSubject"></span></div><div><span data-i18n="thCampus"></span></div><div><span data-i18n="thClassesCol"></span></div><div><span data-i18n="thActions"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">KS</div><div><div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="t1"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">#TC-2201</div></div></div>
+          <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="subjScience"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#EAF0F4;color:#0F344F"><span data-i18n="tagBoys"></span></span></div>
+          <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="cls5"></span></div>
+          <div style="display:flex;gap:6px"><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #F0DCDC;color:#A33B3B;cursor:pointer"><span data-i18n="del"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;align-items:center;padding:14px 20px">
+          <div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:#F7EADA;color:#8A5510;display:flex;align-items:center;justify-content:center;font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">HN</div><div><div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="t2"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">#TC-2318</div></div></div>
+          <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="subjMath"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="tagGirls"></span></span></div>
+          <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="cls6"></span></div>
+          <div style="display:flex;gap:6px"><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #F0DCDC;color:#A33B3B;cursor:pointer"><span data-i18n="del"></span></span></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aStudents">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #EDF1F3">
+          <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="recent"></span></div>
+          <div style="flex:1"></div>
+          <div style="display:flex;gap:6px">
+            <span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 12px;border-radius:8px;background:#0F344F;color:#fff"><span data-i18n="fAll"></span></span>
+            <span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 12px;border-radius:8px;background:#F2F5F6;color:#5F7480"><span data-i18n="fPri"></span></span>
+            <span style="font:500 12px/1 'IBM Plex Sans Arabic',sans-serif;padding:8px 12px;border-radius:8px;background:#F2F5F6;color:#5F7480"><span data-i18n="fMid"></span></span>
+          </div>
+          <div style="display:flex;gap:8px;flex:none">
+            <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportPdf"></span></button>
+            <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportXls"></span></button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;padding:12px 20px;background:#F7F9FA;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+          <div><span data-i18n="thStudent"></span></div><div><span data-i18n="thGradeCol"></span></div><div><span data-i18n="thGuardian"></span></div><div><span data-i18n="thFeesCol"></span></div><div><span data-i18n="thActions"></span></div>
+        </div>
+        <div class="when" data-if="showRows">
+        <div>
+          <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+            <div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">NM</div><div><div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s1"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">#ST-10482</div></div></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="gr4a"></span></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g1"></span></div>
+            <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="paid"></span></span></div>
+            <div style="display:flex;gap:6px"><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #F0DCDC;color:#A33B3B;cursor:pointer"><span data-i18n="del"></span></span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+            <div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">SQ</div><div><div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s2"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">#ST-10481</div></div></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="gr6b"></span></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g2"></span></div>
+            <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="lateFee"></span></span></div>
+            <div style="display:flex;gap:6px"><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #F0DCDC;color:#A33B3B;cursor:pointer"><span data-i18n="del"></span></span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr minmax(112px,1fr) minmax(112px,1fr) 110px;gap:12px;align-items:center;padding:14px 20px">
+            <div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:#E3EDEF;color:#0E7C86;display:flex;align-items:center;justify-content:center;font:600 11.5px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">RD</div><div><div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="s3"></span></div><div style="font:400 11.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8296A0">#ST-10479</div></div></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="gr2c"></span></div>
+            <div style="font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g3"></span></div>
+            <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F2F5F6;color:#5F7480"><span data-i18n="underReview"></span></span></div>
+            <div style="display:flex;gap:6px"><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span><span style="font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #F0DCDC;color:#A33B3B;cursor:pointer"><span data-i18n="del"></span></span></div>
+          </div>
+        </div>
+        </div>
+        <div class="when" data-if="loading">
+        <div style="padding:8px 20px 18px">
+          <div style="display:flex;align-items:center;gap:8px;padding:12px 0;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span style="width:14px;height:14px;border-radius:50%;border:2px solid #DDE3E7;border-top-color:#0E7C86;animation:spin .8s linear infinite;display:inline-block"></span><span data-i18n="loadingStudents"></span></div>
+          <div style="display:grid;gap:10px">
+            <div style="height:44px;border-radius:10px;background:#EFF3F4;animation:sk 1.4s ease-in-out infinite"></div>
+            <div style="height:44px;border-radius:10px;background:#EFF3F4;animation:sk 1.4s ease-in-out infinite;animation-delay:.12s"></div>
+            <div style="height:44px;border-radius:10px;background:#EFF3F4;animation:sk 1.4s ease-in-out infinite;animation-delay:.24s"></div>
+          </div>
+        </div>
+        </div>
+        <div class="when" data-if="empty">
+        <div style="padding:56px 24px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+          <div style="width:64px;height:64px;border-radius:18px;background:#F2F5F6;border:1px dashed #CFD9DE"></div>
+          <div style="font:600 15.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="emptyTitle"></span></div>
+          <div style="max-width:340px;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="emptyText"></span></div>
+          <button data-action="openModal" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer;margin-top:4px"><span data-i18n="addStudent"></span></button>
+        </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aLogOrOverview">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="logTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="logSub"></span></div></div>
+          <div style="flex:1"></div>
+          <button type="button" class="link-all" data-action="goLog" data-hide-on="log"><span data-i18n="logAll"></span></button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #F1F4F5">
+          <div style="width:30px;height:30px;border-radius:50%;background:#EAF0F4;color:#0F344F;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">AS</div>
+          <div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="lg1"></span></div>
+          <div style="flex:1;min-width:160px;font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="lg1w"></span></div>
+          <div style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="lg1t"></span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #F1F4F5">
+          <div style="width:30px;height:30px;border-radius:50%;background:#F7EADA;color:#8A5510;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">RH</div>
+          <div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="lg2"></span></div>
+          <div style="flex:1;min-width:160px;font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="lg2w"></span></div>
+          <div style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="lg2t"></span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0">
+          <div style="width:30px;height:30px;border-radius:50%;background:#EAF0F4;color:#0F344F;display:flex;align-items:center;justify-content:center;font:600 11px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">TM</div>
+          <div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="lg3"></span></div>
+          <div style="flex:1;min-width:160px;font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="lg3w"></span></div>
+          <div style="font:400 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="lg3t"></span></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="aClasses">
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #EDF1F3">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="clsTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="clsSub"></span></div></div>
+          <div style="flex:1"></div>
+          <div style="display:flex;gap:6px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#0F344F;color:#fff"><span data-i18n="boysCount"></span></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F2F5F6;color:#5F7480"><span data-i18n="girlsCount"></span></span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr .8fr .8fr 110px;gap:12px;padding:12px 20px;background:#F7F9FA;font:600 12px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+          <div><span data-i18n="thClass"></span></div><div><span data-i18n="thStage"></span></div><div><span data-i18n="thCampus"></span></div><div><span data-i18n="thHomeroom"></span></div><div><span data-i18n="thCount"></span></div><div><span data-i18n="thRoom"></span></div><div><span data-i18n="thActions"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr .8fr .8fr 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="gr4a"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="stagePri"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="tagGirls"></span></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="t2"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">27</div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">A-104</div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr .8fr .8fr 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="gr6b"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="stagePri"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#EAF0F4;color:#0F344F"><span data-i18n="tagBoys"></span></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="t1"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">29</div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">B-201</div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr .8fr .8fr 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="gr2c"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="stagePri"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="tagGirls"></span></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="t3"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">24</div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">A-102</div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr .8fr .8fr 110px;gap:12px;align-items:center;padding:14px 20px">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="cls5a"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="stagePri"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#EAF0F4;color:#0F344F"><span data-i18n="tagBoys"></span></span></div>
+          <div style="font:500 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#8A5510"><span data-i18n="noHomeroom"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">28</div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C">B-205</div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="edit"></span></span></div>
+        </div>
+      </div>
+      </div>
+      <div class="when" data-if="aFinance">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:14px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px"><div style="font:500 12.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kFinCollected"></span></div><div style="font:700 26px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="vFinCollected"></span></div></div>
+        <div style="background:#FDF4E8;border:1px solid #F4E0C2;border-radius:14px;padding:18px"><div style="font:500 12.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#96662A;margin-bottom:12px"><span data-i18n="kFinDue"></span></div><div style="font:700 26px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="vFinDue"></span></div></div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px"><div style="font:500 12.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kFinRate"></span></div><div style="font:700 26px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F">92%</div></div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px"><div style="font:500 12.5px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="kFinOpen"></span></div><div style="font:700 26px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#0F344F">23</div></div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #EDF1F3">
+          <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="finTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="termLine"></span></div></div>
+          <div style="flex:1"></div>
+          <div style="display:flex;gap:8px;flex:none">
+            <button style="font:600 12px/1.2 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportPdf"></span></button>
+            <button style="font:600 12px/1.2 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportXls"></span></button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1.2fr 1fr 1fr .9fr 110px;gap:12px;padding:12px 20px;background:#F7F9FA;font:600 12px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+          <div><span data-i18n="thInvoice"></span></div><div><span data-i18n="thGuardian"></span></div><div><span data-i18n="thAmount"></span></div><div><span data-i18n="thDue"></span></div><div><span data-i18n="thStatus"></span></div><div><span data-i18n="thActions"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1.2fr 1fr 1fr .9fr 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="fi1"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g1"></span></div>
+          <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="fi1a"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="fi1d"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="invDue"></span></span></div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="remind"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1.2fr 1fr 1fr .9fr 110px;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid #F1F4F5">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="fi2"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g2"></span></div>
+          <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="fi2a"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="fi2d"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F3E1E1;color:#8E3232"><span data-i18n="invOverdue"></span></span></div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="remind"></span></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1.2fr 1fr 1fr .9fr 110px;gap:12px;align-items:center;padding:14px 20px">
+          <div style="font:600 13.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="fi3"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="g3"></span></div>
+          <div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="fi3a"></span></div>
+          <div style="font:400 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="fi3d"></span></div>
+          <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="invPaid"></span></span></div>
+          <div style="display:flex;gap:6px"><span style="display:inline-flex;align-items:center;white-space:nowrap;font:500 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 10px;border-radius:7px;border:1px solid #DDE3E7;color:#37505C;cursor:pointer"><span data-i18n="remind"></span></span></div>
+        </div>
+      </div>
+      </div>
+      <div class="when" data-if="aSettings">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="margin-bottom:14px"><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="permsTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="permsSub"></span></div></div>
+          <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;font:600 11.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;padding-bottom:10px;border-bottom:1px solid #EDF1F3">
+            <div><span data-i18n="thRole"></span></div><div><span data-i18n="mStudents"></span></div><div><span data-i18n="pGradesNav"></span></div><div><span data-i18n="mFinance"></span></div><div><span data-i18n="mSettings"></span></div>
+          </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="roleAdmin"></span></div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#0A6A5F">✓</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="roleDeputy"></span></div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="roleTeacher"></span></div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="roleAccountant"></span></div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#0A6A5F">✓</div>
+          <div style="color:#B4C0C6">—</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;align-items:center;padding:12px 0;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif">
+          <div><span data-i18n="roleParent"></span></div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+          <div style="color:#B4C0C6">—</div>
+        </div>
+          <div style="margin-top:14px;padding:12px 13px;border-radius:10px;background:#F5F8F9;font:400 11.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="campusLockNote"></span></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="margin-bottom:6px"><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="genTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="genSub"></span></div></div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #F4F7F8">
+          <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="setLang"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="setLangV"></span></div></div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="onWord"></span></span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #F4F7F8">
+          <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="setYear"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="setYearV"></span></div></div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="onWord"></span></span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #F4F7F8">
+          <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="setNotif"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="setNotifV"></span></div></div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="onWord"></span></span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 0">
+          <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="setSep"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="setSepV"></span></div></div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="onWord"></span></span>
+        </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <div class="when" data-if="isLogin">
+  <div style="min-height:100vh;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+    <div style="background:#0F344F;padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:520px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:40px;height:40px;border-radius:11px;background:#0E7C86;flex:none"></div>
+        <div>
+          <div style="font:700 18px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+          <div style="font:400 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.55)"><span data-i18n="brandSub"></span></div>
+        </div>
+      </div>
+      <div style="max-width:420px">
+        <h1 style="margin:0 0 16px;font:700 34px/1.35 'IBM Plex Sans Arabic',sans-serif;color:#fff;text-wrap:pretty"><span data-i18n="lTitle"></span></h1>
+        <p style="margin:0;font:400 15px/1.9 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.68);text-wrap:pretty"><span data-i18n="lText"></span></p>
+      </div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <div><div style="font:700 22px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">1,248</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vStudents"></span></div></div>
+        <div><div style="font:700 22px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">86</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vStaff"></span></div></div>
+        <div><div style="font:700 22px/1 'IBM Plex Sans Arabic',sans-serif;color:#fff">42</div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="vClasses"></span></div></div>
+      </div>
+    </div>
+
+    <div style="background:#fff;display:flex;flex-direction:column;padding:26px 32px 56px">
+      <div style="display:flex;justify-content:flex-end">
+        <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#F2F5F6;border:1px solid #E4E9EC">
+          <button data-action="setAr" class="seg-btn" data-lang="ar">العربية</button>
+          <button data-action="setEn" class="seg-btn" data-lang="en">English</button>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;justify-content:center">
+      <div style="width:100%;max-width:400px">
+        <h2 style="margin:0 0 6px;font:700 24px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="loginTitle"></span></h2>
+        <p style="margin:0 0 28px;font:400 13.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="loginSub"></span></p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px">
+          <button data-action="pickAdmin" class="role-btn" data-role="admin"><span data-i18n="roleAdmin"></span></button>
+          <button data-action="pickStaff" class="role-btn" data-role="staff"><span data-i18n="roleStaff"></span></button>
+          <button data-action="pickParent" class="role-btn" data-role="parent"><span data-i18n="roleParent"></span></button>
+        </div>
+        <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="emailLabel"></span></label>
+        <input type="text" id="loginEmail" autocomplete="username" placeholder="name@nasr.edu.sa" style="width:100%;font:400 14px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;margin-bottom:16px;color:#10222A">
+        <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="pwLabel"></span></label>
+        <input type="password" id="loginPassword" autocomplete="current-password" placeholder="••••••••" style="width:100%;font:400 14px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;margin-bottom:14px;color:#10222A">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+          <label style="display:flex;align-items:center;gap:8px;font:400 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><input type="checkbox" style="accent-color:#0E7C86;width:15px;height:15px"><span data-i18n="remember"></span></label>
+          <a href="#" style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="forgot"></span></a>
+        </div>
+        <button id="loginSubmit" data-action="submitLogin" style="width:100%;font:600 15px/1 'IBM Plex Sans Arabic',sans-serif;padding:15px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.12)"><span data-i18n="loginCta"></span></button>
+        <div id="loginError" role="alert" hidden style="margin:10px 0 0;padding:10px 12px;border-radius:9px;background:#F3E1E1;color:#A33B3B;font:500 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif"></div>
+        <p style="margin:16px 0 0;font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="loginNote"></span></p>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid #EDF1F3">
+          <span style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="notRegistered"></span></span>
+          <a href="#" data-action="goVisitor" style="font:600 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif;cursor:pointer"><span data-i18n="viewPublic"></span></a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="when" data-if="isParent">
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;min-height:100vh">
+    <div class="drawer-scrim" data-open="false" data-action="closeDrawer"></div>
+    <aside class="app-sidebar" data-open="false" style="width:252px;flex:none;background:#0F344F;padding:24px 16px;display:flex;flex-direction:column;gap:24px">
+      <button data-action="goPOv" style="display:flex;align-items:center;gap:10px;padding:8px;margin:0 0 -4px;border:none;background:transparent;cursor:pointer;text-align:start;width:100%">
+        <div style="width:32px;height:32px;border-radius:9px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 15px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </button>
+      <div>
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:0 10px 8px"><span data-i18n="secChild"></span></div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:9px;background:rgba(224,138,46,.16);font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span style="width:7px;height:7px;border-radius:2px;background:#E08A2E;flex:none"></span><span data-i18n="childG"></span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:9px;font:400 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.72)"><span style="width:7px;height:7px;border-radius:2px;background:rgba(255,255,255,.28);flex:none"></span><span data-i18n="childB"></span></div>
+        </div>
+      </div>
+      <nav style="display:flex;flex-direction:column;gap:3px">
+        <div style="font:600 10.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.38);padding:0 10px 8px"><span data-i18n="secParentSchool"></span></div>
+        <button data-action="goPOv" class="nav-item" data-nav="overview"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pOverview"></span></span></button>
+        <button data-action="goPGr" class="nav-item" data-nav="pgrades"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pGradesNav"></span></span></button>
+        <button data-action="goPAtt" class="nav-item" data-nav="patt"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pAttNav"></span></span></button>
+        <button data-action="goPFees" class="nav-item" data-nav="pfees"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pFeesNav"></span></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;background:#E08A2E;color:#2A1704;border-radius:999px;padding:4px 7px">1</span></button>
+        <button data-action="goPAsk" class="nav-item" data-nav="pask"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pAskNav"></span></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:4px 7px">1</span></button>
+        <button data-action="goPCal" class="nav-item" data-nav="pcal"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pCalNav"></span></span></button>
+        <button data-action="goPCirc" class="nav-item" data-nav="pcirc"><span class="nav-dot"></span><span style="flex:1;text-align:start"><span data-i18n="pCircNav"></span></span></button>
+      </nav>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:11px;background:rgba(255,255,255,.06)">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E08A2E;color:#2A1704;display:flex;align-items:center;justify-content:center;font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;flex:none">MO</div>
+        <div><div style="font:600 12.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="parentName"></span></div><div style="font:400 11px/1.4 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.5)"><span data-i18n="parentRole"></span></div></div>
+      </div>
+    </aside>
+
+    <main class="app-main" style="flex:1;min-width:320px;padding:26px 28px 40px;display:flex;flex-direction:column;gap:18px">
+      <div class="mob-only" style="position:sticky;top:0;z-index:40;align-items:center;gap:12px;margin:0 -16px 2px;padding:12px 16px;background:#0F344F">
+        <button data-action="toggleDrawer" style="width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer">
+          <span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span><span style="display:block;width:17px;height:2px;border-radius:2px;background:#fff"></span>
+        </button>
+        <div style="width:28px;height:28px;border-radius:8px;background:#0E7C86;flex:none"></div>
+        <div style="font:700 14px/1.2 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="brand"></span></div>
+      </div>
+      <header style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <div>
+          <div class="when" data-if="pNotOverview">
+          <nav class="crumb" data-i18n-aria-label="crumbAria">
+            <button type="button" class="crumb-link" data-action="goOverview"><span data-dyn="crumbRoot"></span></button>
+            <span class="when" data-if="crumbGroup">
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <button type="button" class="crumb-link crumb-group" data-action="goGroup"><span data-dyn="crumbGroup"></span></button>
+            </span>
+            <span class="crumb-sep" aria-hidden="true">/</span>
+            <span class="crumb-current" aria-current="page"><span data-dyn="secTitle"></span></span>
+          </nav>
+          </div>
+          <h1 style="margin:0 0 4px;font:700 22px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pGreet"></span></h1>
+          <div style="font:400 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="pDay"></span></div>
+        </div>
+        <div style="flex:1"></div>
+        <div style="position:relative">
+          <button data-action="toggleNotif" style="position:relative;width:42px;height:42px;border-radius:11px;border:1px solid #DDE3E7;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">
+            <span style="display:block;width:13px;height:13px;border:2px solid #37505C;border-bottom:none;border-radius:7px 7px 0 0"></span>
+            <span style="position:absolute;bottom:9px;width:17px;height:2px;background:#37505C;border-radius:2px"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;position:absolute;top:6px;inset-inline-end:6px;min-width:17px;height:17px;border-radius:999px;background:#E08A2E;color:#2A1704;font:700 10px/17px 'IBM Plex Sans Arabic',sans-serif">2</span>
+          </button>
+          <div class="when" data-if="notifOpen">
+          <div style="position:absolute;top:50px;inset-inline-end:0;width:290px;z-index:30;background:#fff;border:1px solid #E4E9EC;border-radius:13px;box-shadow:0 14px 34px rgba(11,34,51,.16);overflow:hidden">
+            <div style="padding:13px 16px;border-bottom:1px solid #EDF1F3;font:600 13px/1 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="notifTitle"></span></div>
+            <div style="padding:13px 16px;border-bottom:1px solid #F4F7F8;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#E08A2E;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="inv1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="pKFeesS"></span></div></div></div>
+            <div style="padding:13px 16px;display:flex;gap:10px"><span style="width:7px;height:7px;border-radius:50%;background:#0E7C86;margin-top:5px;flex:none"></span><div><div style="font:600 12.5px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ann1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ann1s"></span></div></div></div>
+            <button type="button" class="link-all link-all--block" data-action="goPCirc" data-hide-on="pcirc"><span data-i18n="notifAll"></span></button>
+          </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:4px;padding:3px;border-radius:9px;background:#fff;border:1px solid #E4E9EC">
+          <button data-action="setAr" class="seg-btn" data-lang="ar">العربية</button>
+          <button data-action="setEn" class="seg-btn" data-lang="en">English</button>
+        </div>
+        <button data-action="logout" style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:12px 14px;border-radius:10px;border:1px solid #DDE3E7;background:#fff;color:#5F7480;cursor:pointer"><span data-i18n="logout"></span></button>
+        <button style="font:600 13.5px/1.35 'IBM Plex Sans Arabic',sans-serif;padding:12px 18px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="payNow"></span></button>
+      </header>
+      <div class="when" data-if="pOv">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:14px">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="pKAtt"></span></div>
+          <div style="font:700 30px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="pKAttV"></span></div>
+          <div style="margin-top:10px;font:500 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="pKAttS"></span></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:18px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:12px"><span data-i18n="pKAvg"></span></div>
+          <div style="font:700 30px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="pKAvgV"></span></div>
+          <div style="margin-top:10px;font:500 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F"><span data-i18n="pKAvgS"></span></div>
+        </div>
+        <div style="background:#FDF4E8;border:1px solid #F4E0C2;border-radius:14px;padding:18px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#96662A;margin-bottom:12px"><span data-i18n="pKFees"></span></div>
+          <div style="font:700 30px/1 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="pKFeesV"></span></div>
+          <div style="margin-top:10px;font:500 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#96662A"><span data-i18n="pKFeesS"></span></div>
+        </div>
+        <div style="background:#0F344F;border:1px solid #0F344F;border-radius:14px;padding:18px">
+          <div style="font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:rgba(255,255,255,.6);margin-bottom:12px"><span data-i18n="pKNext"></span></div>
+          <div style="font:700 19px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#fff"><span data-i18n="pKNextV"></span></div>
+          <div style="margin-top:10px;font:500 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#F2B366"><span data-i18n="pKNextS"></span></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pAsk">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:6px">
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="askTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="askSub"></span></div></div>
+            <div style="flex:1"></div>
+            <span style="white-space:nowrap;display:flex;align-items:center;gap:7px;font:600 11.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:7px 11px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span style="width:7px;height:7px;border-radius:50%;background:#0A6A5F;flex:none"></span><span data-i18n="askSlaBadge"></span></span>
+          </div>
+          <div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;margin-bottom:16px"><span data-i18n="askSlaNote"></span></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:12px">
+            <div>
+              <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="askPickTeacher"></span></label>
+              <select style="width:100%;font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 13px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"><option><span data-i18n="askT1"></span></option><option><span data-i18n="askT2"></span></option><option><span data-i18n="askT3"></span></option></select>
+            </div>
+            <div>
+              <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="askPickSubject"></span></label>
+              <select style="width:100%;font:400 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 13px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"><option><span data-i18n="askS1"></span></option><option><span data-i18n="askS2"></span></option><option><span data-i18n="askS3"></span></option><option><span data-i18n="askS4"></span></option></select>
+            </div>
+          </div>
+          <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="askQ"></span></label>
+          <textarea rows="3" placeholder="" data-i18n-placeholder="askQPh" style="width:100%;font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A;resize:vertical"></textarea>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px">
+            <button style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 20px;border-radius:10px;border:none;background:#0F344F;color:#fff;cursor:pointer"><span data-i18n="askSend"></span></button>
+            <div style="flex:1;min-width:180px;font:400 11.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;text-wrap:pretty"><span data-i18n="askNote"></span></div>
+          </div>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EDF1F3">
+            <div style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:12px"><span data-i18n="askMine"></span></div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="padding:13px;border:1px solid #EDF1F3;border-radius:11px;border-inline-end:3px solid #E08A2E">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px">
+                  <div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="aq1"></span></div>
+                  <div style="flex:1"></div>
+                  <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:5px 9px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="askPendTag"></span></span>
+                </div>
+                <div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;margin-bottom:8px"><span data-i18n="aq1m"></span></div>
+                <div style="display:flex;align-items:center;gap:7px;font:500 12px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0A6A5F"><span style="width:6px;height:6px;border-radius:50%;background:#0A6A5F;flex:none"></span><span data-i18n="aq1r"></span></div>
+              </div>
+              <div style="padding:13px;border:1px solid #EDF1F3;border-radius:11px;border-inline-end:3px solid #0A6A5F;background:#FAFCFC">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px">
+                  <div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="aq2"></span></div>
+                  <div style="flex:1"></div>
+                  <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:5px 9px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="askAnsTag"></span></span>
+                </div>
+                <div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;margin-bottom:8px"><span data-i18n="aq2m"></span></div>
+                <div style="font:400 13px/1.8 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="aq2r"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pFees">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px">
+              <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="invTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="invSub"></span></div></div>
+              <div style="flex:1"></div>
+              <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportPdf"></span></button>
+            </div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr minmax(96px,auto);gap:10px;font:600 11.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;padding-bottom:10px;border-bottom:1px solid #EDF1F3">
+              <div><span data-i18n="thInvoice"></span></div><div><span data-i18n="thDue"></span></div><div><span data-i18n="thAmount"></span></div><div><span data-i18n="thStatus"></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr minmax(96px,auto);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8">
+              <div style="font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="inv1"></span></div>
+              <div style="font:400 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="inv1d"></span></div>
+              <div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="inv1a"></span></div>
+              <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 9px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="invDue"></span></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr minmax(96px,auto);gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #F4F7F8">
+              <div style="font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="inv2"></span></div>
+              <div style="font:400 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="inv2d"></span></div>
+              <div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="inv2a"></span></div>
+              <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 9px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="invPaid"></span></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:2fr 1fr 1fr minmax(96px,auto);gap:10px;align-items:center;padding:12px 0">
+              <div style="font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="inv3"></span></div>
+              <div style="font:400 12px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="inv3d"></span></div>
+              <div style="font:600 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#37505C"><span data-i18n="inv3a"></span></div>
+              <div><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 9px;border-radius:999px;background:#E8F3F1;color:#0A6A5F"><span data-i18n="invPaid"></span></span></div>
+            </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pGr">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px">
+              <div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="pGradesTitle"></span></div>
+              <div style="flex:1"></div>
+              <button style="font:600 12px/1 'IBM Plex Sans Arabic',sans-serif;white-space:nowrap;padding:10px 13px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="exportPdf"></span></button>
+            </div>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;font:600 11.5px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;padding-bottom:10px;border-bottom:1px solid #EDF1F3">
+              <div><span data-i18n="thSubjectCol"></span></div><div><span data-i18n="thTermNow"></span></div><div><span data-i18n="thTermPrev"></span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><div><span data-i18n="pgMath"></span></div><div style="color:#0A6A5F;font-weight:600">94</div><div style="color:#8296A0">91</div></div>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><div><span data-i18n="pgSci"></span></div><div style="color:#0F344F;font-weight:600">89</div><div style="color:#8296A0">90</div></div>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;padding:11px 0;border-bottom:1px solid #F4F7F8;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><div><span data-i18n="pgAra"></span></div><div style="color:#0A6A5F;font-weight:600">96</div><div style="color:#8296A0">93</div></div>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;padding:11px 0;font:500 12.5px/1.4 'IBM Plex Sans Arabic',sans-serif"><div><span data-i18n="pgEng"></span></div><div style="color:#0F344F;font-weight:600">87</div><div style="color:#8296A0">85</div></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pAttSec">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+            <div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif;margin-bottom:14px"><span data-i18n="pAttTitle"></span></div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+              <span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#E08A2E"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span>
+              <span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#E08A2E"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span><span style="width:26px;height:26px;border-radius:7px;background:#0A6A5F"></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;font:500 11.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480">
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:3px;background:#0A6A5F"></span><span data-i18n="attPresentDays"></span></span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:3px;background:#E08A2E"></span><span data-i18n="attLateDays"></span></span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:3px;background:#DDE3E7"></span><span data-i18n="attAbsentDays"></span></span>
+            </div>
+          </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pCalOrOv">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px">
+            <div><div style="font:600 14.5px/1.3 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="calTitle"></span></div><div style="font:400 12px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="calSub"></span></div></div>
+            <div style="flex:1"></div>
+            <button type="button" class="link-all" data-action="goPCal" data-hide-on="pcal"><span data-i18n="calFull"></span></button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#FDF4E8;border:1px solid #F4E0C2">
+              <span style="width:8px;height:8px;border-radius:50%;background:#E08A2E;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif;color:#7A4A09"><span data-i18n="ev2"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#96662A"><span data-i18n="ev2d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F7E3C4;color:#7A4A09"><span data-i18n="tExam"></span></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#F5F8F9">
+              <span style="width:8px;height:8px;border-radius:50%;background:#0E7C86;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ev1"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ev1d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#E9F2F3;color:#0A6A5F"><span data-i18n="tEvent"></span></span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px;border-radius:11px;background:#F5F8F9">
+              <span style="width:8px;height:8px;border-radius:50%;background:#A33B3B;flex:none"></span>
+              <div style="flex:1;min-width:150px"><div style="font:600 13px/1.4 'IBM Plex Sans Arabic',sans-serif"><span data-i18n="ev3"></span></div><div style="font:400 11.5px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="ev3d"></span></div></div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 11px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:6px 10px;border-radius:999px;background:#F3E1E1;color:#8E3232"><span data-i18n="tHoliday"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="when" data-if="pCircOrOv">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+        <div style="background:#fff;border:1px solid #E4E9EC;border-radius:14px;padding:20px">
+          <div style="font:600 14.5px/1 'IBM Plex Sans Arabic',sans-serif;margin-bottom:14px"><span data-i18n="annTitle"></span></div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="padding:13px;border-radius:11px;background:#F5F8F9"><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="ann1"></span></div><div style="font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="ann1s"></span></div></div>
+            <div style="padding:13px;border-radius:11px;background:#F5F8F9"><div style="font:600 13px/1.5 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="ann2"></span></div><div style="font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480"><span data-i18n="ann2s"></span></div></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <div class="when" data-if="modal">
+  <div style="position:fixed;inset:0;z-index:90;background:rgba(11,34,51,.5);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow:auto">
+    <div style="width:100%;max-width:620px;background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(11,34,51,.3);overflow:hidden">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;border-bottom:1px solid #EDF1F3">
+        <div style="flex:1"><div style="font:700 17px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="msTitle"></span></div><div style="font:400 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0"><span data-i18n="msSub"></span></div></div>
+        <button data-action="closeModal" aria-label="" data-i18n-aria-label="closeAria" style="width:32px;height:32px;flex:none;border-radius:9px;border:1px solid #DDE3E7;background:#fff;color:#5F7480;font:400 16px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer">×</button>
+      </div>
+      <div style="padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfName"></span></label><input id="stName" type="text" placeholder="" data-i18n-placeholder="fNamePh" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfBirth"></span></label><input type="date" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div>
+          <label style="display:flex;align-items:center;gap:8px;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfCampus"></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:4px 7px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="reqTag"></span></span></label>
+          <select id="stCampus" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1.5px solid #0E7C86;border-radius:10px;background:#F7FBFB;color:#10222A"><option><span data-i18n="selectPh"></span></option><option><span data-i18n="boys"></span></option><option><span data-i18n="girls"></span></option></select>
+        </div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfGrade"></span></label><select id="stGrade" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"><option><span data-i18n="gr4a"></span></option><option><span data-i18n="gr6b"></span></option><option><span data-i18n="gr2c"></span></option></select></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfGuardian"></span></label><input id="stGuardian" type="text" placeholder="" data-i18n-placeholder="g1" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfGuardPhone"></span></label><input id="stGuardPhone" type="text" placeholder="05XXXXXXXX" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div style="grid-column:1/-1"><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfEmail"></span></label><input id="stGuardEmail" type="text" placeholder="name@example.com" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div style="grid-column:1/-1">
+          <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mfPhoto"></span></label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:16px;border:1px dashed #CFD9DE;border-radius:12px;background:#FBFCFC">
+            <div style="width:52px;height:52px;border-radius:50%;background:#EFF3F4;border:1px solid #E4E9EC;flex:none"></div>
+            <div style="flex:1;min-width:160px;font:400 12px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;text-wrap:pretty"><span data-i18n="uploadHint"></span></div>
+            <button style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:11px 15px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="browse"></span></button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:18px 24px;background:#F7F9FA;border-top:1px solid #EDF1F3">
+        <div style="flex:1"></div>
+        <button data-action="closeModal" style="font:500 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 18px;border-radius:10px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="cancel"></span></button>
+        <button id="saveStudentBtn" data-action="saveStudent" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 20px;border-radius:10px;border:none;background:#E08A2E;color:#2A1704;cursor:pointer"><span data-i18n="saveStudent"></span></button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="when" data-if="teacherModal">
+  <div style="position:fixed;inset:0;z-index:90;background:rgba(11,34,51,.5);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow:auto">
+    <div style="width:100%;max-width:620px;background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(11,34,51,.3);overflow:hidden">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;border-bottom:1px solid #EDF1F3">
+        <div style="flex:1"><div style="font:700 17px/1.3 'IBM Plex Sans Arabic',sans-serif;color:#0F344F"><span data-i18n="mtTitle"></span></div><div style="font:400 12.5px/1.6 'IBM Plex Sans Arabic',sans-serif;color:#8296A0;text-wrap:pretty"><span data-i18n="mtSub"></span></div></div>
+        <button data-action="closeTeacherModal" aria-label="" data-i18n-aria-label="closeAria" style="width:32px;height:32px;flex:none;border-radius:9px;border:1px solid #DDE3E7;background:#fff;color:#5F7480;font:400 16px/1 'IBM Plex Sans Arabic',sans-serif;cursor:pointer">×</button>
+      </div>
+      <div style="padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtName"></span></label><input id="tcName" type="text" placeholder="" data-i18n-placeholder="t1" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtSubject"></span></label><select id="tcSubject" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"><option><span data-i18n="selectPh"></span></option><option><span data-i18n="subjMath"></span></option><option><span data-i18n="subjScience"></span></option><option><span data-i18n="pgAra"></span></option><option><span data-i18n="pgEng"></span></option></select></div>
+        <div style="grid-column:1/-1">
+          <label style="display:flex;align-items:center;gap:8px;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtCampus"></span><span style="display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:600 10.5px/1.2 'IBM Plex Sans Arabic',sans-serif;padding:4px 7px;border-radius:999px;background:#FDF0DC;color:#8A5510"><span data-i18n="reqTag"></span></span></label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px">
+            <label style="display:flex;align-items:center;gap:10px;padding:13px 14px;border:1.5px solid #0E7C86;border-radius:10px;background:#F1F7F8;font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#0F344F;cursor:pointer"><input type="radio" name="mtCampus" value="boys" checked="checked" style="accent-color:#0E7C86;width:16px;height:16px"><span data-i18n="boys"></span></label>
+            <label style="display:flex;align-items:center;gap:10px;padding:13px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#fff;font:500 13px/1 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;cursor:pointer"><input type="radio" name="mtCampus" value="girls" style="accent-color:#0E7C86;width:16px;height:16px"><span data-i18n="girls"></span></label>
+          </div>
+          <div style="margin-top:10px;padding:11px 13px;border-radius:10px;background:#F5F8F9;font:400 11.5px/1.7 'IBM Plex Sans Arabic',sans-serif;color:#5F7480;text-wrap:pretty"><span data-i18n="campusLockNote"></span></div>
+        </div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtPhone"></span></label><input id="tcPhone" type="text" placeholder="05XXXXXXXX" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtEmail"></span></label><input id="tcEmail" type="text" placeholder="name@nasr.edu.sa" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div><label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtStart"></span></label><input type="date" style="width:100%;font:400 13.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:12px 14px;border:1px solid #D7DEE2;border-radius:10px;background:#FBFCFC;color:#10222A"></div>
+        <div>
+          <label style="display:block;font:500 12.5px/1 'IBM Plex Sans Arabic',sans-serif;color:#37505C;margin-bottom:8px"><span data-i18n="mtPhoto"></span></label>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px dashed #CFD9DE;border-radius:11px;background:#FBFCFC">
+            <div style="width:42px;height:42px;border-radius:50%;background:#EFF3F4;border:1px solid #E4E9EC;flex:none"></div>
+            <button style="font:600 12.5px/1 'IBM Plex Sans Arabic',sans-serif;padding:10px 14px;border-radius:9px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="browse"></span></button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:18px 24px;background:#F7F9FA;border-top:1px solid #EDF1F3">
+        <div style="flex:1"></div>
+        <button data-action="closeTeacherModal" style="font:500 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 18px;border-radius:10px;border:1px solid #D7DEE2;background:#fff;color:#37505C;cursor:pointer"><span data-i18n="cancel"></span></button>
+        <button id="saveTeacherBtn" data-action="saveTeacher" style="font:600 13px/1 'IBM Plex Sans Arabic',sans-serif;padding:13px 20px;border-radius:10px;border:none;background:#0E7C86;color:#fff;cursor:pointer"><span data-i18n="saveTeacher"></span></button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+<!-- Load order matters:
+     config.js  — connection settings (publishable key only)
+     data.js    — window.NasrI18n, which store.js validates against
+     store.js   — session persistence
+     app.js     — the controller; renders immediately from the design
+     supabase.js— an ES module, so it runs last by definition. It publishes
+                  NasrApi/NasrAuth and then fires "nasr:ready", which app.js
+                  listens for. The screens are usable before it arrives. -->
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+<script type="module" src="js/supabase.js"></script>
+</body>
+</html>

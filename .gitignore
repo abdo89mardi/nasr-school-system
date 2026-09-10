@@ -1,0 +1,15 @@
+# Local tooling and editor state
+.claude/
+.vscode/
+.idea/
+
+# Secrets — the publishable key in js/config.js is public by design, but a
+# secret key (sb_secret_…) or a database password must never be committed.
+.env
+.env.*
+*.local
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
