@@ -20,15 +20,43 @@
 (function () {
   'use strict';
 
-  /* The CDN script may be blocked or offline. Say so plainly rather than
-   * letting every later call fail with a confusing message. */
-  if (!window.supabase || !window.supabase.createClient) {
-    window.NasrLibMissing = true;
-    console.error('[nasr] لم تُحمَّل مكتبة supabase-js — تحقّق من الاتصال بالإنترنت.');
-    window.dispatchEvent(new CustomEvent('nasr:ready', { detail: { db: false, lib: false } }));
+  var CDN = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.10/dist/umd/supabase.js';
+
+  function announce(detail) {
+    window.dispatchEvent(new CustomEvent('nasr:ready', { detail: detail }));
+  }
+
+  /* Demo mode: the public preview. Nothing below runs — no library is fetched,
+   * no client is created, no request is sent, no session is read. The rest of
+   * the app sees NasrApi/NasrAuth as absent and falls back to the design's own
+   * content, which is exactly what the preview is meant to show.
+   *
+   * Everything after this gate is the real integration, kept intact.
+   * Flip mode to 'live' in js/config.js to bring it back. */
+  if (window.NasrDemo) {
+    window.NasrDbReady = false;
+    console.info('[nasr] وضع المعاينة — لا اتصال بقاعدة البيانات. للتفعيل غيّر mode إلى live في js/config.js');
+    announce({ db: false, lib: false, demo: true });
     return;
   }
 
+  /* Live mode. supabase-js is pulled in here rather than from a <script> tag
+   * in index.html, so the demo build issues no third-party request at all. */
+  if (window.supabase && window.supabase.createClient) {
+    boot();
+  } else {
+    var tag = document.createElement('script');
+    tag.src = CDN;
+    tag.onload = boot;
+    tag.onerror = function () {
+      window.NasrLibMissing = true;
+      console.error('[nasr] تعذّر تحميل مكتبة supabase-js من الشبكة.');
+      announce({ db: false, lib: false, demo: false });
+    };
+    document.head.appendChild(tag);
+  }
+
+  function boot() {
   var createClient = window.supabase.createClient;
 
 const cfg = window.NasrConfig || {};
@@ -250,4 +278,5 @@ const api = {
     }
     window.dispatchEvent(new CustomEvent('nasr:ready', { detail: { db: ok, lib: true } }));
   });
+  }
 })();

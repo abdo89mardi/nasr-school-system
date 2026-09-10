@@ -204,6 +204,9 @@
 
   /* The single place that decides which screen may be shown. */
   function allowedScreen(requested) {
+    // Public preview: every screen is open to everyone. There is no session to
+    // check and no data to protect — see js/config.js.
+    if (window.NasrDemo) return requested;
     if (!isDashboard(requested)) return requested;   // visitor + login: always open
     if (state.authState === 'pending') return 'checking';
     if (state.authState !== 'in') return 'login';
@@ -284,6 +287,7 @@
     /* Ends the Supabase session before returning to the login screen, so the
      * next visitor cannot resume the previous one from the stored token. */
     logout: function () {
+      if (window.NasrDemo) { goScreen('visitor')(); return; }
       state.profile = null;
       state.authState = 'out';
       state.wanted = 'login';
@@ -298,6 +302,14 @@
      * only a hint about which dashboard the person expects; the dashboard they
      * actually get comes from their `profiles` row, which the server owns. */
     submitLogin: function () {
+      /* Preview: the role picker is the whole login, exactly as the prototype
+       * behaved before the database existed. No credentials are checked. */
+      if (window.NasrDemo) {
+        state.loading = true;
+        render();
+        setTimeout(function () { state.loading = false; goScreen(state.role)(); }, 500);
+        return;
+      }
       var emailEl = document.getElementById('loginEmail');
       var passEl = document.getElementById('loginPassword');
       var email = emailEl ? emailEl.value.trim() : '';
@@ -384,6 +396,7 @@
      * ------------------------------------------------------------------- */
 
     saveStudent: function () {
+      if (window.NasrDemo) { state.modal = false; render(); return; }
       var v = fields({
         full_name: 'stName', campus: 'stCampus', grade: 'stGrade',
         gName: 'stGuardian', gPhone: 'stGuardPhone', gEmail: 'stGuardEmail'
@@ -414,6 +427,7 @@
     },
 
     saveTeacher: function () {
+      if (window.NasrDemo) { state.teacherModal = false; render(); return; }
       var v = fields({ full_name: 'tcName', subject: 'tcSubject', phone: 'tcPhone', email: 'tcEmail' });
       var picked = document.querySelector('input[name="mtCampus"]:checked');
       var campus = picked ? picked.value : 'boys';
@@ -893,6 +907,13 @@
   }
 
   window.addEventListener('nasr:ready', function (e) {
+    // Preview: there is no session to settle and nothing to warn about. The
+    // guard is already standing aside, so every screen stays open.
+    if (e.detail.demo) {
+      settled = true;
+      state.authState = 'out';
+      return;
+    }
     // Without the library there is no way to verify a session, and an
     // unverifiable visitor is treated as signed out. Guessing the other way
     // would hand the dashboards to anyone whose CDN request happened to fail.

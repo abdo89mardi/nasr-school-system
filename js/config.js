@@ -1,15 +1,45 @@
-/* Nasr School Management System — connection settings
+/* ===========================================================================
+ * ⚠️  هذه النسخة تعمل في وضع «معاينة عامة ببيانات وهمية» (mode: 'demo')
+ * ===========================================================================
  *
- * The publishable key is meant to be public: it is what the browser ships with
- * every request, and it grants nothing on its own. What a request may read or
- * write is decided by the Row Level Security policies in supabase/schema.sql,
- * enforced by the database itself.
+ * ما معنى ذلك:
+ *   • لا يجري أي اتصال بـ Supabase إطلاقاً — لا قراءة ولا كتابة ولا مصادقة.
+ *   • اللوحات الثلاث (admin / staff / parent) مفتوحة للتصفّح الحر بلا تسجيل دخول.
+ *   • البيانات المعروضة كلها ثابتة داخل index.html — بيانات عرض لا بيانات مدرسة.
  *
- * A secret key (sb_secret_…) must never appear in this file, or anywhere else
- * the browser can reach — it bypasses every policy.
- */
+ * كود الاتصال الحقيقي **موجود وكامل ولم يُحذف**:
+ *   js/supabase.js       عميل Supabase وطبقة البيانات والمصادقة
+ *   supabase/schema.sql  مخطط قاعدة البيانات وسياسات الأمان
+ *   js/app.js            تسجيل الدخول الفعلي وحارس المسارات
+ *
+ * ───────────────────────────────────────────────────────────────────────────
+ * لإعادة تفعيل النظام الحقيقي: غيّر السطر أدناه إلى mode: 'live'
+ * ───────────────────────────────────────────────────────────────────────────
+ *
+ * وهذا كل المطلوب. عندها يعود فوراً:
+ *   تسجيل الدخول بـ Supabase Auth · حارس المسارات · القراءة والكتابة الفعلية
+ *
+ * قبل التسليم الفعلي للمدرسة تحقّق من هذه الثلاثة:
+ *   1. أن supabase/schema.sql مُطبَّق على المشروع المستهدف.
+ *   2. أن حسابات الدخول منشأة وأدوارها مضبوطة في جدول profiles.
+ *   3. أن الرابط أدناه والمفتاح المنشور يخصّان مشروع المدرسة لا مشروع التجربة.
+ *
+ * تحذير: لا تنشر النسخة الحيّة على GitHub Pages وفيها بيانات طلاب حقيقية قبل
+ * مراجعة سياسات RLS — الصفحة عامة، والحماية كلها في قاعدة البيانات لا في الواجهة.
+ * ========================================================================= */
 
 window.NasrConfig = {
+
+  /* 'demo' = بيانات وهمية بلا اتصال · 'live' = قاعدة البيانات الحقيقية */
+  mode: 'demo',
+
+  /* يُستخدمان في وضع 'live' فقط.
+   * المفتاح المنشور (publishable) عام بحكم تصميمه — ما يُسمح بقراءته أو كتابته
+   * تحدّده سياسات RLS في قاعدة البيانات، لا سرّية هذا المفتاح.
+   * أما المفتاح السرّي (sb_secret_…) فلا يوضع هنا ولا في أي ملف يصل إليه المتصفح. */
   supabaseUrl: 'https://qrprmpxhipdyykzrbqtk.supabase.co',
   supabaseKey: 'sb_publishable_l2lMSVcmtp3iKW_hem5l9Q_q64PRqFm'
 };
+
+/* اختصار يقرأه بقية الكود: هل نحن في وضع المعاينة؟ */
+window.NasrDemo = window.NasrConfig.mode !== 'live';
